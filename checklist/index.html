@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Free landing page checklist: is your page ready to convert? | Pagewright</title>
+  <meta name="description" content="A free, interactive 12-point checklist that scores how ready your landing page is to convert. No signup, runs in your browser. See exactly what is missing." />
+  <link rel="canonical" href="https://leonbede7.github.io/pagewright/checklist/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free landing page checklist: is your page ready to convert?" />
+  <meta property="og:description" content="An interactive 12-point checklist that scores your landing page. No signup, runs in your browser." />
+  <meta property="og:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+  <meta property="og:url" content="https://leonbede7.github.io/pagewright/checklist/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free landing page checklist: is your page ready to convert?" />
+  <meta name="twitter:description" content="An interactive 12-point checklist that scores your landing page." />
+  <meta name="twitter:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Landing page readiness checklist",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "A free interactive checklist that scores how ready your landing page is to convert.",
+    "url": "https://leonbede7.github.io/pagewright/checklist/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+
+  <style>
+    .chk { accent-color: var(--brand); width: 1.2rem; height: 1.2rem; flex: none; cursor: pointer; }
+    .chk-row { cursor: pointer; }
+    .chk-row:has(.chk:checked) .chk-text { color: var(--ink); }
+    @media (prefers-reduced-motion: no-preference) {
+      #bar { transition: width 0.4s var(--ease-out); }
+    }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/>
+            <rect x="8" y="3" width="13" height="15" rx="2.5"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get Pagewright</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="mx-auto max-w-3xl px-5 pt-14 sm:px-6 md:pt-20">
+      <p class="text-sm font-medium text-muted"><a href="../" class="transition hover:text-ink">Pagewright</a> / Free tool</p>
+      <h1 class="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">Is your landing page ready to convert?</h1>
+      <p class="mt-4 text-lg text-muted">Tick what is true of your page. You get a live score and see exactly what is missing. No signup, nothing leaves your browser.</p>
+    </div>
+
+    <!-- Sticky score bar -->
+    <div class="sticky top-16 z-20 mt-8 border-y border-line bg-canvas/90 backdrop-blur-md">
+      <div class="mx-auto flex max-w-3xl items-center gap-4 px-5 py-3 sm:px-6">
+        <div class="shrink-0">
+          <span id="score" class="text-2xl font-semibold tracking-tight tabular-nums">0</span><span class="text-muted"> / 12</span>
+        </div>
+        <div class="h-2 flex-1 overflow-hidden rounded-full bg-panel">
+          <div id="bar" class="h-full rounded-full bg-brand" style="width:0%"></div>
+        </div>
+        <span id="verdict" class="hidden shrink-0 text-sm font-medium text-muted sm:inline">Start ticking</span>
+      </div>
+    </div>
+
+    <div class="mx-auto max-w-3xl px-5 pb-8 sm:px-6">
+      <p id="verdict-mobile" class="mt-4 text-sm font-medium text-muted sm:hidden">Start ticking</p>
+
+      <form id="checklist" class="mt-8 space-y-10">
+        <fieldset>
+          <legend class="text-sm font-semibold uppercase tracking-wider text-faint">The hero</legend>
+          <div class="mt-4 divide-y divide-line border-y border-line">
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">The headline states the <strong class="font-medium text-ink">outcome the visitor gets</strong>, not a feature or your company name.</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">A subhead explains <strong class="font-medium text-ink">how it works</strong> in one sentence.</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">There is <strong class="font-medium text-ink">exactly one</strong> primary call to action above the fold.</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">The hero is <strong class="font-medium text-ink">not crowded</strong> with badges, taglines, and feature lists.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="text-sm font-semibold uppercase tracking-wider text-faint">Belief and proof</legend>
+          <div class="mt-4 divide-y divide-line border-y border-line">
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">A <strong class="font-medium text-ink">problem section</strong> makes the cost of the status quo felt before you sell the fix.</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">Social proof uses a <strong class="font-medium text-ink">real name, role, and company</strong> (or is left out, not faked).</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">Any numbers are <strong class="font-medium text-ink">real</strong>, not invented to look precise.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="text-sm font-semibold uppercase tracking-wider text-faint">The offer</legend>
+          <div class="mt-4 divide-y divide-line border-y border-line">
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">Pricing is <strong class="font-medium text-ink">visible</strong>, not hidden behind "contact us".</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">Tiers have <strong class="font-medium text-ink">one highlighted option</strong> and a risk-reducer line ("no card to start").</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">The FAQ answers the <strong class="font-medium text-ink">top objections</strong>, not trivia.</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="text-sm font-semibold uppercase tracking-wider text-faint">Friction</legend>
+          <div class="mt-4 divide-y divide-line border-y border-line">
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">The final call to action <strong class="font-medium text-ink">repeats the hero's action</strong>, in the same words.</span></label>
+            <label class="chk-row flex items-start gap-3 py-4"><input type="checkbox" class="chk mt-0.5"><span class="chk-text text-muted">You ask for the <strong class="font-medium text-ink">minimum</strong>: few form fields, one decision.</span></label>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- Result CTA -->
+      <div class="mt-12 rounded-2xl border border-line bg-card p-8 shadow-soft">
+        <h2 id="result-title" class="text-2xl font-semibold tracking-tight">Tick the boxes to see your score.</h2>
+        <p id="result-body" class="mt-3 text-muted">Most pages miss four or five of these. Each miss is signups quietly walking away.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="../#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Get a page that passes all 12
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="../guide/" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Read the guide</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mt-8 border-t border-line bg-canvas">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 sm:flex-row sm:px-6">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/><rect x="8" y="3" width="13" height="15" rx="2.5"/></svg></span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <p class="text-sm text-faint">Conversion-engineered landing pages, with the copy already written.</p>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="../#templates" class="transition hover:text-ink">Templates</a>
+        <a href="../#pricing" class="transition hover:text-ink">Pricing</a>
+        <a href="../guide/" class="transition hover:text-ink">Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js" defer></script>
+  <script>
+    (function () {
+      var boxes = Array.prototype.slice.call(document.querySelectorAll('#checklist .chk'));
+      var total = boxes.length;
+      var scoreEl = document.getElementById('score');
+      var barEl = document.getElementById('bar');
+      var verdictEl = document.getElementById('verdict');
+      var verdictMobileEl = document.getElementById('verdict-mobile');
+      var titleEl = document.getElementById('result-title');
+      var bodyEl = document.getElementById('result-body');
+
+      function bandFor(n) {
+        if (n <= 3)  return { word: 'Working against you', title: 'This page is working against you.', body: 'The essentials are not in place. Visitors cannot tell what you do, why it matters, or what to do next. Good news: every gap here is fixable, and a template that gets them right does most of the work for you.' };
+        if (n <= 7)  return { word: 'Leaky', title: 'Leaky. Several essentials are missing.', body: 'You are losing signups at the gaps. Fixing two or three of these is usually the difference between a page that gets traffic and a page that gets customers.' };
+        if (n <= 10) return { word: 'Close', title: 'Close. A few gaps are costing you.', body: 'The bones are good. Closing the last few gaps is the cheapest conversion win you will find this week.' };
+        return            { word: 'Strong', title: 'Strong. Your page is built to convert.', body: 'You are doing the things most pages skip. If you are building another page, start from a template that bakes all of this in so you do not have to remember it every time.' };
+      }
+
+      function update() {
+        var n = boxes.filter(function (b) { return b.checked; }).length;
+        scoreEl.textContent = String(n);
+        barEl.style.width = Math.round((n / total) * 100) + '%';
+        var band = bandFor(n);
+        verdictEl.textContent = band.word;
+        verdictEl.classList.remove('hidden');
+        if (verdictMobileEl) verdictMobileEl.textContent = 'Readiness: ' + band.word;
+        titleEl.textContent = band.title;
+        bodyEl.textContent = band.body;
+      }
+
+      boxes.forEach(function (b) { b.addEventListener('change', update); });
+      update();
+    })();
+  </script>
+</body>
+</html>
