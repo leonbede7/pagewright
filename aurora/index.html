@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================= -->
+  <!-- PAGEWRIGHT · AURORA                                             -->
+  <!-- A conversion-engineered landing template. The demo content is a -->
+  <!-- fictional product ("Cairn"). Replace copy, links, and tokens.   -->
+  <!-- Rebrand colors: edit the 8 variables in assets/css/styles.css   -->
+  <!-- (:root for light, .dark for dark). No build step needed.        -->
+  <!-- ============================================================= -->
+
+  <title>Cairn: Automatic standups from your team's real work</title>
+  <meta name="description" content="Cairn turns your team's commits, pull requests, and tickets into a clear daily standup. Skip the status meeting and keep everyone in sync." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <!-- Theme color for browser UI, per color scheme -->
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <!-- Open Graph / social share. Replace og.png with your own 1200x630 image. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Cairn: Automatic standups from your team's real work" />
+  <meta property="og:description" content="Turn commits, pull requests, and tickets into a clear daily standup. Skip the status meeting." />
+  <meta property="og:image" content="https://example.com/assets/img/og.png" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cairn: Automatic standups from your team's real work" />
+  <meta name="twitter:description" content="Turn commits, pull requests, and tickets into a clear daily standup. Skip the status meeting." />
+  <meta name="twitter:image" content="https://example.com/assets/img/og.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/site.webmanifest" />
+
+  <!-- Preload the display font for a fast, stable first paint -->
+  <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- No-FOUC theme: set the class before first paint. Tiny + inline on purpose. -->
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <!-- Accessibility: keyboard users can jump straight to content -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <!-- ============================================================= -->
+  <!-- ANNOUNCEMENT BAR                                                -->
+  <!-- WHY: a single, dismissible line for a timely message (launch,   -->
+  <!-- new feature, offer). Dismissible so it never nags repeat visits.-->
+  <!-- ============================================================= -->
+  <div data-announce class="relative z-40 border-b border-line bg-panel">
+    <div class="mx-auto flex max-w-6xl items-center justify-center gap-3 px-5 py-2.5 text-center text-sm">
+      <span class="text-muted">New in Cairn: weekly digest emails for stakeholders.</span>
+      <a href="#features" class="font-semibold text-brand hover:underline">See what's new</a>
+      <button data-announce-close type="button" aria-label="Dismiss announcement" class="absolute right-4 grid h-6 w-6 place-items-center rounded-full text-faint transition hover:bg-card hover:text-ink">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- NAV  ·  single line, persistent primary CTA                     -->
+  <!-- ============================================================= -->
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-brand">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="6.5" y="15" width="11" height="5" rx="2.5"/>
+            <rect x="8.25" y="9.25" width="7.5" height="4.5" rx="2.25"/>
+            <rect x="9.75" y="4.5" width="4.5" height="3.5" rx="1.75"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Cairn</span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#features" class="text-sm text-muted transition hover:text-ink">Features</a>
+        <a href="#how" class="text-sm text-muted transition hover:text-ink">How it works</a>
+        <a href="#pricing" class="text-sm text-muted transition hover:text-ink">Pricing</a>
+        <a href="#faq" class="text-sm text-muted transition hover:text-ink">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="hidden text-sm font-medium text-muted transition hover:text-ink sm:inline-block">Sign in</a>
+        <a href="#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Start free</a>
+        <button data-mobile-toggle type="button" aria-label="Open menu" aria-expanded="false" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink md:hidden">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div data-mobile-menu class="hidden border-t border-line bg-canvas md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
+        <a href="#features" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Features</a>
+        <a href="#how" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">How it works</a>
+        <a href="#pricing" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Pricing</a>
+        <a href="#faq" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ============================================================= -->
+    <!-- HERO  ·  asymmetric split (copy left, real product UI right)    -->
+    <!-- WHY: one job above the fold. Outcome headline (not a feature),  -->
+    <!-- a one-line mechanism subhead, one primary action, one optional  -->
+    <!-- secondary. No trust strip or tagline in here: those get their   -->
+    <!-- own sections so the hero stays a single clear moment.           -->
+    <!-- ============================================================= -->
+    <section class="relative overflow-hidden">
+      <div class="ambient pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-20 sm:px-6 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pb-28">
+        <div class="reveal max-w-xl">
+          <h1 class="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            Your daily standup, written for you.
+          </h1>
+          <p class="mt-5 max-w-md text-lg leading-relaxed text-muted">
+            Cairn turns commits, pull requests, and tickets into a clear daily summary. Skip the status meeting and keep everyone in sync.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+              Start free
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#how" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">
+              See how it works
+            </a>
+          </div>
+        </div>
+
+        <!-- Real product UI preview (a genuine mini-interface, not a fake screenshot image). -->
+        <div class="reveal reveal-d2 lg:pl-2">
+          <div class="overflow-hidden rounded-2xl border border-line bg-card shadow-lift">
+            <div class="flex items-center gap-2 border-b border-line bg-panel px-4 py-3">
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/50"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/40"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/30"></span>
+              <span class="ml-2 font-mono text-xs text-faint">cairn / #standup-engineering</span>
+              <span class="ml-auto rounded-full bg-brand-soft px-2.5 py-0.5 font-mono text-[11px] text-brand">09:00</span>
+            </div>
+            <div class="space-y-4 p-5">
+              <p class="font-mono text-[11px] uppercase tracking-wider text-faint">Auto-generated · Tue, 17 Jun</p>
+
+              <div class="flex gap-3">
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">MV</span>
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold">Marko Vukic</p>
+                  <p class="mt-0.5 text-sm text-muted">Shipped the billing webhook retry queue. Reviewing the Stripe migration next.</p>
+                  <div class="mt-2 flex flex-wrap gap-1.5">
+                    <span class="inline-flex items-center gap-1 rounded-full border border-line bg-panel px-2 py-0.5 font-mono text-[11px] text-muted">merged PR #482</span>
+                    <span class="inline-flex items-center gap-1 rounded-full border border-line bg-panel px-2 py-0.5 font-mono text-[11px] text-muted">4 commits</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-3">
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">PN</span>
+                <div class="min-w-0">
+                  <p class="text-sm font-semibold">Priya Nadkarni</p>
+                  <p class="mt-0.5 text-sm text-muted">Closed the onboarding flake in CI. Picking up the export API today.</p>
+                  <div class="mt-2 flex flex-wrap gap-1.5">
+                    <span class="inline-flex items-center gap-1 rounded-full border border-line bg-panel px-2 py-0.5 font-mono text-[11px] text-muted">Linear ENG-211</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 rounded-xl border border-line bg-panel px-3 py-2.5">
+                <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+                <p class="text-xs text-muted"><span class="font-semibold text-ink">1 blocker:</span> PR #479 has been waiting on review for 2 days.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TRUST BAR  ·  borrowed credibility, lives UNDER the hero        -->
+    <!-- Logos only. (Fictional customers for this demo; swap for yours) -->
+    <!-- ============================================================= -->
+    <section class="border-y border-line bg-canvas py-10" aria-label="Customers">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <p class="text-center text-xs font-medium uppercase tracking-widest text-faint">Trusted by engineering teams at</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 text-muted">
+          <!-- Invented brand monograms (placeholders) -->
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18 12 4l8 14z"/></svg> Northtab
+          </span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="var(--canvas)"/></svg> Fathom
+          </span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><rect x="9" y="9" width="6" height="6" rx="2" fill="var(--canvas)"/></svg> Kestrel
+          </span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12a7 7 0 0 1 14 0 7 7 0 0 1-14 0z"/><path d="M12 5v14"/></svg> Driftwell
+          </span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M12 2 4 7v10l8 5 8-5V7z"/><path d="M12 7 8 9.5v5L12 17l4-2.5v-5z" fill="var(--canvas)"/></svg> Pinegrove
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- PROBLEM (agitate)  ·  make the cost of the status quo felt      -->
+    <!-- Layout family: statement + 3 inline pains divided by hairlines  -->
+    <!-- (no card boxes). Distinct from every other section.            -->
+    <!-- ============================================================= -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">The status meeting is a tax on focus.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted">
+            Every morning, an entire team stops what it is doing to say out loud what a tool already knows. The updates are stale by lunch, and the one person who needed them was on mute.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          <div class="bg-canvas p-6">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            <h3 class="mt-4 font-semibold">15 minutes, times everyone</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">A daily sync for eight people is a full work-day lost every week, before anyone writes a line of code.</p>
+          </div>
+          <div class="bg-canvas p-6">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M8 12h8"/></svg>
+            <h3 class="mt-4 font-semibold">Updates go stale fast</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">By the time it is written in a doc, the work has moved on. Nobody trusts a status that is six hours old.</p>
+          </div>
+          <div class="bg-canvas p-6">
+            <svg viewBox="0 0 24 24" class="h-6 w-6 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg>
+            <h3 class="mt-4 font-semibold">Blockers hide too long</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">A stuck pull request can sit for days. By the time it surfaces in a meeting, the momentum is already gone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- HOW IT WORKS  ·  3 steps, reduce perceived effort               -->
+    <!-- Verb-first headings (no "Step 1" labels). Connector line.       -->
+    <!-- ============================================================= -->
+    <section id="how" class="border-t border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Live in the time it takes to make coffee.</h2>
+          <p class="mt-4 text-lg text-muted">Connect your tools once. Cairn handles the rest, every working day.</p>
+        </div>
+
+        <ol class="mt-14 grid gap-8 md:grid-cols-3">
+          <li class="reveal relative">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-brand text-sm font-semibold text-on-brand">1</span>
+              <span class="h-px flex-1 bg-line md:block"></span>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Connect your stack</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Link GitHub, GitLab, Linear, or Jira with read-only access. It takes two clicks and no config.</p>
+          </li>
+          <li class="reveal reveal-d1 relative">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-brand text-sm font-semibold text-on-brand">2</span>
+              <span class="h-px flex-1 bg-line md:block"></span>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Cairn reads the work</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">It groups each person's merged PRs, commits, and closed issues into a plain-language summary.</p>
+          </li>
+          <li class="reveal reveal-d2 relative">
+            <div class="flex items-center gap-3">
+              <span class="grid h-10 w-10 place-items-center rounded-full bg-brand text-sm font-semibold text-on-brand">3</span>
+            </div>
+            <h3 class="mt-5 text-lg font-semibold">Read it where you work</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">The digest lands in Slack and email before standup time, with blockers flagged at the top.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- FEATURES  ·  benefit-led bento (varied cell sizes, real visual  -->
+    <!-- variation). Each headline is an outcome, not a spec.            -->
+    <!-- ============================================================= -->
+    <section id="features" class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Everything a standup should be, and nothing it should not.</h2>
+          <p class="mt-4 text-lg text-muted">No meetings, no nagging, no copy-paste. Just an honest picture of what shipped and what is stuck.</p>
+        </div>
+
+        <div class="mt-12 grid gap-4 md:grid-cols-6">
+          <!-- Wide cell A: reads the work, with a mini source visual -->
+          <article class="reveal md:col-span-3 rounded-2xl border border-line bg-card p-6 shadow-soft">
+            <h3 class="text-lg font-semibold">It reads the work, not just the words</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Cairn summarizes what actually happened in your repos and trackers, so updates are real instead of aspirational.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m23.6004 9.5927-.0337-.0862L20.3.9814a.851.851 0 0 0-.3362-.405.8748.8748 0 0 0-.9997.0539.8748.8748 0 0 0-.29.4399l-2.2055 6.748H7.5375l-2.2057-6.748a.8573.8573 0 0 0-.29-.4412.8748.8748 0 0 0-.9997-.0537.8585.8585 0 0 0-.3362.4049L.4332 9.5015l-.0325.0862a6.0657 6.0657 0 0 0 2.0119 7.0105l.0113.0087.03.0213 4.976 3.7264 2.462 1.8633 1.4995 1.1321a1.0085 1.0085 0 0 0 1.2197 0l1.4995-1.1321 2.4619-1.8633 5.006-3.7489.0125-.01a6.0682 6.0682 0 0 0 2.0094-7.003z"/></svg>GitLab</span>
+              <span class="inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M2.886 4.18A11.982 11.982 0 0 1 11.99 0C18.624 0 24 5.376 24 12.009c0 3.64-1.62 6.903-4.18 9.105L2.887 4.18ZM1.817 5.626l16.556 16.556c-.524.33-1.075.62-1.65.866L.951 7.277c.247-.575.537-1.126.866-1.65ZM.322 9.163l14.515 14.515c-.71.172-1.443.282-2.195.322L0 11.358a12 12 0 0 1 .322-2.195Zm-.17 4.862 9.823 9.824a12.02 12.02 0 0 1-9.824-9.824Z"/></svg>Linear</span>
+            </div>
+          </article>
+
+          <!-- Wide cell B: tone control, with a mini tone visual -->
+          <article class="reveal reveal-d1 md:col-span-3 rounded-2xl border border-line bg-card p-6 shadow-soft">
+            <h3 class="text-lg font-semibold">It sounds like your team</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Pick a tone, from terse engineering notes to a friendly recap for stakeholders. Cairn writes to match.</p>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-brand px-3 py-1.5 text-sm font-medium text-on-brand">Concise</span>
+              <span class="rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted">Detailed</span>
+              <span class="rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted">Stakeholder</span>
+              <span class="rounded-full border border-line bg-panel px-3 py-1.5 text-sm text-muted">Changelog</span>
+            </div>
+          </article>
+
+          <!-- Medium cell C: delivery -->
+          <article class="reveal md:col-span-2 rounded-2xl border border-line bg-card p-6 shadow-soft">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-brand" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+            <h3 class="mt-4 font-semibold">Lands where you already are</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Slack, email, or Notion. No new app for your team to learn or ignore.</p>
+          </article>
+
+          <!-- Medium cell D: security, tinted background for visual variety -->
+          <article class="reveal reveal-d1 md:col-span-2 rounded-2xl border border-brand/20 bg-brand-soft p-6">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3 class="mt-4 font-semibold">Private by default</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Cairn reads metadata, never your source code. Revoke access in one click, any time.</p>
+          </article>
+
+          <!-- Medium cell E: blockers -->
+          <article class="reveal reveal-d2 md:col-span-2 rounded-2xl border border-line bg-card p-6 shadow-soft">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+            <h3 class="mt-4 font-semibold">Surfaces blockers early</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Stale reviews and stuck tickets get flagged at the top, while there is still time to fix them.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- SHOWCASE  ·  the money shot. One large, real product UI.        -->
+    <!-- Layout family: centered headline + full-width asset.            -->
+    <!-- ============================================================= -->
+    <section class="border-y border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-5xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">One glance, and you know where the team stands.</h2>
+          <p class="mt-4 text-lg text-muted">This is the digest your team gets every morning. No one had to write it.</p>
+        </div>
+
+        <div class="reveal reveal-d1 mt-12 overflow-hidden rounded-2xl border border-line bg-card shadow-lift">
+          <div class="flex items-center gap-2 border-b border-line bg-panel px-4 py-3">
+            <span class="h-2.5 w-2.5 rounded-full bg-faint/50"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-faint/40"></span>
+            <span class="h-2.5 w-2.5 rounded-full bg-faint/30"></span>
+            <span class="ml-2 font-mono text-xs text-faint">Daily digest · Engineering</span>
+            <span class="ml-auto inline-flex items-center gap-1.5 rounded-full bg-brand-soft px-2.5 py-0.5 font-mono text-[11px] text-brand">
+              <svg viewBox="0 0 24 24" class="h-3 w-3" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              sent 09:00
+            </span>
+          </div>
+          <div class="grid gap-0 sm:grid-cols-3">
+            <!-- left: blockers callout -->
+            <div class="border-b border-line bg-brand-soft/60 p-5 sm:border-b-0 sm:border-r">
+              <p class="font-mono text-[11px] uppercase tracking-wider text-brand">Needs attention</p>
+              <div class="mt-4 space-y-3">
+                <div class="rounded-xl border border-brand/20 bg-card p-3">
+                  <p class="text-sm font-medium">PR #479 waiting 2 days</p>
+                  <p class="mt-0.5 text-xs text-muted">Review requested from @sasha</p>
+                </div>
+                <div class="rounded-xl border border-line bg-card p-3">
+                  <p class="text-sm font-medium">ENG-198 stalled</p>
+                  <p class="mt-0.5 text-xs text-muted">No update in 3 days</p>
+                </div>
+              </div>
+            </div>
+            <!-- right: people summaries -->
+            <div class="space-y-5 p-5 sm:col-span-2">
+              <p class="font-mono text-[11px] uppercase tracking-wider text-faint">Shipped yesterday</p>
+              <div class="flex gap-3">
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">MV</span>
+                <div>
+                  <p class="text-sm"><span class="font-semibold">Marko Vukic</span> <span class="text-muted">merged the billing webhook retry queue and cut error rate on failed charges.</span></p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">PN</span>
+                <div>
+                  <p class="text-sm"><span class="font-semibold">Priya Nadkarni</span> <span class="text-muted">fixed the flaky onboarding test and unblocked the release pipeline.</span></p>
+                </div>
+              </div>
+              <div class="flex gap-3">
+                <span class="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">TL</span>
+                <div>
+                  <p class="text-sm"><span class="font-semibold">Tomas Lindqvist</span> <span class="text-muted">shipped CSV export behind a flag and started the rate-limit work.</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- TESTIMONIALS  ·  social proof. Featured quote + two supporting. -->
+    <!-- Asymmetric, distinct from the bento and the metric band.        -->
+    <!-- ============================================================= -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="grid gap-6 lg:grid-cols-3">
+          <figure class="reveal lg:col-span-2 flex flex-col justify-between rounded-2xl border border-line bg-card p-8 shadow-soft">
+            <blockquote class="text-xl font-medium leading-relaxed sm:text-2xl">
+              "We deleted our daily standup meeting and nobody missed it. Cairn's summary is in Slack before the team logs on, and it is more accurate than what we used to say out loud."
+            </blockquote>
+            <figcaption class="mt-8 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-brand-soft text-sm font-semibold text-brand">MV</span>
+              <div>
+                <p class="font-semibold">Marko Vukic</p>
+                <p class="text-sm text-muted">Engineering Lead, Northtab</p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <div class="flex flex-col gap-6">
+            <figure class="reveal reveal-d1 flex h-full flex-col justify-between rounded-2xl border border-line bg-card p-6 shadow-soft">
+              <blockquote class="leading-relaxed text-muted">"Our distributed team finally has one source of truth for what shipped."</blockquote>
+              <figcaption class="mt-5 flex items-center gap-3">
+                <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">PN</span>
+                <div>
+                  <p class="text-sm font-semibold">Priya Nadkarni</p>
+                  <p class="text-xs text-muted">CTO, Fathom Health</p>
+                </div>
+              </figcaption>
+            </figure>
+            <figure class="reveal reveal-d2 flex h-full flex-col justify-between rounded-2xl border border-line bg-card p-6 shadow-soft">
+              <blockquote class="leading-relaxed text-muted">"Setup took five minutes. The blocker alerts alone pay for it."</blockquote>
+              <figcaption class="mt-5 flex items-center gap-3">
+                <span class="grid h-9 w-9 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">TL</span>
+                <div>
+                  <p class="text-sm font-semibold">Tomas Lindqvist</p>
+                  <p class="text-xs text-muted">Staff Engineer, Kestrel</p>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Metric band: no card boxes, hairline dividers (sample numbers, replace) -->
+        <div class="reveal mt-6 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+          <div class="bg-card p-8 text-center">
+            <p class="text-4xl font-semibold tracking-tight text-brand">3.5 hrs</p>
+            <p class="mt-1.5 text-sm text-muted">saved per developer, each week</p>
+          </div>
+          <div class="bg-card p-8 text-center">
+            <p class="text-4xl font-semibold tracking-tight text-brand">2,418</p>
+            <p class="mt-1.5 text-sm text-muted">standups written this week</p>
+          </div>
+          <div class="bg-card p-8 text-center">
+            <p class="text-4xl font-semibold tracking-tight text-brand">11</p>
+            <p class="mt-1.5 text-sm text-muted">tools it reads from</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- PRICING  ·  anchored tiers, one highlighted, risk reversal      -->
+    <!-- ============================================================= -->
+    <section id="pricing" class="border-t border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Pricing that pays for itself by Tuesday.</h2>
+          <p class="mt-4 text-lg text-muted">Start free. Upgrade when your team feels the difference.</p>
+        </div>
+
+        <div class="mt-14 grid items-start gap-6 lg:grid-cols-3">
+          <!-- Free -->
+          <div class="reveal rounded-2xl border border-line bg-card p-7 shadow-soft">
+            <h3 class="font-semibold">Solo</h3>
+            <p class="mt-1 text-sm text-muted">For one developer or a trial.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">$0</span><span class="text-muted"> / month</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-full border border-line bg-card px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Start free</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">1 connected repository</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Daily summary by email</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">7-day history</span></li>
+            </ul>
+          </div>
+
+          <!-- Team (highlighted) -->
+          <div class="reveal reveal-d1 relative rounded-2xl border-2 border-brand bg-card p-7 shadow-lift">
+            <span class="absolute -top-3 left-7 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-on-brand">Most popular</span>
+            <h3 class="font-semibold">Team</h3>
+            <p class="mt-1 text-sm text-muted">For teams that ship every day.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">$8</span><span class="text-muted"> / user / month</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Start free</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Unlimited repositories</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Slack, email, and Notion delivery</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Blocker detection and tone control</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">1-year history</span></li>
+            </ul>
+          </div>
+
+          <!-- Scale -->
+          <div class="reveal reveal-d2 rounded-2xl border border-line bg-card p-7 shadow-soft">
+            <h3 class="font-semibold">Scale</h3>
+            <p class="mt-1 text-sm text-muted">For larger orgs and compliance.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">Custom</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-full border border-line bg-card px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Talk to us</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">SSO and SCIM</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Audit log and data residency</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Priority support and SLA</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="reveal mt-8 text-center text-sm text-muted">No credit card to start. Cancel anytime. 14-day Team trial, no strings.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- FAQ  ·  kill the top objections. Native details/summary.        -->
+    <!-- ============================================================= -->
+    <section id="faq" class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <h2 class="reveal text-center text-3xl font-semibold tracking-tight sm:text-4xl">Questions, answered.</h2>
+        <div class="reveal mt-10 divide-y divide-line border-y border-line">
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              How does Cairn know what we worked on?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">It connects to your version control and issue trackers with read-only access, then groups each person's merged pull requests, commits, and closed issues into a plain summary.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              Do you store our source code?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">No. Cairn reads metadata such as titles, authors, and timestamps. Your code never leaves your provider, and you can revoke access in one click.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              Which tools do you integrate with?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">GitHub, GitLab, Linear, Jira, and Bitbucket on the read side. Slack, email, and Notion for delivery. More are added every month.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              Can we edit a summary before it goes out?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. You can set a short review window so the digest waits for a quick edit, or let it post automatically. Your call, per channel.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              Is there really a free plan?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. Solo is free forever for one repository with a daily email summary. No card required to start.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">
+              How long does setup take?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <p class="mt-3 leading-relaxed text-muted">A few minutes. Connect a provider, pick a channel and a time, and the first digest goes out the next working morning.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================= -->
+    <!-- FINAL CTA  ·  restate the transformation, one action            -->
+    <!-- ============================================================= -->
+    <section class="px-5 pb-20 sm:px-6 md:pb-28">
+      <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-line bg-card p-10 text-center shadow-lift sm:p-14">
+        <div class="ambient pointer-events-none absolute inset-0 -z-10"></div>
+        <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Get tomorrow's standup tonight.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-muted">Connect your tools in a few minutes and wake up to a digest your whole team can trust.</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#" class="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Start free
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#how" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">See how it works</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER                                                          -->
+  <!-- ============================================================= -->
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-6">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+            <span class="text-brand">
+              <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+                <rect x="6.5" y="15" width="11" height="5" rx="2.5"/>
+                <rect x="8.25" y="9.25" width="7.5" height="4.5" rx="2.25"/>
+                <rect x="9.75" y="4.5" width="4.5" height="3.5" rx="1.75"/>
+              </svg>
+            </span>
+            <span class="text-[17px]">Cairn</span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">Automatic standups from your team's real work. Less meeting, more shipping.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#" aria-label="GitHub" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <a href="#" aria-label="X" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a>
+            <a href="#" aria-label="LinkedIn" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-sm font-semibold">Product</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#features" class="transition hover:text-ink">Features</a></li>
+            <li><a href="#pricing" class="transition hover:text-ink">Pricing</a></li>
+            <li><a href="#how" class="transition hover:text-ink">How it works</a></li>
+            <li><a href="#" class="transition hover:text-ink">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Company</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">About</a></li>
+            <li><a href="#" class="transition hover:text-ink">Blog</a></li>
+            <li><a href="#" class="transition hover:text-ink">Careers</a></li>
+            <li><a href="#" class="transition hover:text-ink">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Legal</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">Privacy</a></li>
+            <li><a href="#" class="transition hover:text-ink">Terms</a></li>
+            <li><a href="#" class="transition hover:text-ink">Security</a></li>
+            <li><a href="#" class="transition hover:text-ink">DPA</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 sm:flex-row">
+        <p class="text-sm text-faint">&copy; 2026 Cairn. All rights reserved.</p>
+        <p class="text-sm text-faint">Built with <a href="#" class="font-medium text-muted transition hover:text-ink">Pagewright</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

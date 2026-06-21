@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================= -->
+  <!-- PAGEWRIGHT · LEDGER                                             -->
+  <!-- A developer-tool / B2B landing template. Demo product:         -->
+  <!-- a fictional usage-billing tool, "Tollgate". Replace the copy,   -->
+  <!-- links, and the 8 color variables in assets/css/styles.css.      -->
+  <!-- ============================================================= -->
+
+  <title>Tollgate: Usage-based billing for APIs, without a billing team</title>
+  <meta name="description" content="Tollgate meters every API call, applies your pricing, and turns raw usage into invoices you can trust. Drop in the SDK and bill for exactly what customers use." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tollgate: Usage-based billing for APIs" />
+  <meta property="og:description" content="Meter every API call, apply your pricing, and send invoices you can trust. No billing team required." />
+  <meta property="og:image" content="https://example.com/assets/img/og.png" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tollgate: Usage-based billing for APIs" />
+  <meta name="twitter:description" content="Meter every API call, apply your pricing, and send invoices you can trust." />
+  <meta name="twitter:image" content="https://example.com/assets/img/og.png" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/site.webmanifest" />
+
+  <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <!-- ANNOUNCEMENT -->
+  <div data-announce class="relative z-40 border-b border-line bg-panel">
+    <div class="mx-auto flex max-w-6xl items-center justify-center gap-3 px-5 py-2.5 text-center text-sm">
+      <span class="text-muted">Tollgate now syncs invoices to Stripe and QuickBooks.</span>
+      <a href="#features" class="font-semibold text-brand hover:underline">Read more</a>
+      <button data-announce-close type="button" aria-label="Dismiss announcement" class="absolute right-4 grid h-6 w-6 place-items-center rounded-md text-faint transition hover:bg-card hover:text-ink">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-brand">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="2.5"/>
+            <path d="M3 9h18M9 9v11"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Tollgate</span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#how" class="text-sm text-muted transition hover:text-ink">How it works</a>
+        <a href="#features" class="text-sm text-muted transition hover:text-ink">Features</a>
+        <a href="#pricing" class="text-sm text-muted transition hover:text-ink">Pricing</a>
+        <a href="#faq" class="text-sm text-muted transition hover:text-ink">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#" class="hidden text-sm font-medium text-muted transition hover:text-ink sm:inline-block">Docs</a>
+        <a href="#pricing" class="inline-flex items-center gap-1.5 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Start free</a>
+        <button data-mobile-toggle type="button" aria-label="Open menu" aria-expanded="false" class="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition hover:bg-panel hover:text-ink md:hidden">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div data-mobile-menu class="hidden border-t border-line bg-canvas md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
+        <a href="#how" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">How it works</a>
+        <a href="#features" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Features</a>
+        <a href="#pricing" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Pricing</a>
+        <a href="#faq" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO · copy left, a real code block right (developer-tool feel) -->
+    <section class="relative overflow-hidden border-b border-line">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-20 sm:px-6 md:pt-16 lg:grid-cols-[1fr_1.05fr] lg:gap-12">
+        <div class="reveal max-w-xl">
+          <span class="inline-flex items-center gap-2 rounded-md border border-line bg-panel px-3 py-1 font-mono text-xs text-muted">
+            <span class="h-1.5 w-1.5 rounded-full bg-brand"></span> usage based billing
+          </span>
+          <h1 class="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.4rem]">
+            Bill for exactly what they use.
+          </h1>
+          <p class="mt-5 max-w-md text-lg leading-relaxed text-muted">
+            Tollgate meters every API call, applies your pricing, and turns raw usage into invoices you can trust. No billing team required.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#pricing" class="inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+              Start free
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#" class="inline-flex items-center gap-2 rounded-lg border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">
+              Read the docs
+            </a>
+          </div>
+        </div>
+
+        <!-- Code panel (real markup, theme-adaptive, not a screenshot) -->
+        <div class="reveal reveal-d2">
+          <div class="overflow-hidden rounded-xl border border-line bg-card shadow-lift">
+            <div class="flex items-center gap-2 border-b border-line bg-panel px-4 py-2.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/50"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/40"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/30"></span>
+              <span class="ml-2 font-mono text-xs text-faint">usage.ts</span>
+            </div>
+            <pre class="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed"><code><span class="text-faint">// one line wherever usage happens</span>
+<span class="text-brand">import</span> { Tollgate } <span class="text-brand">from</span> <span class="text-brand">"tollgate"</span>
+
+<span class="text-brand">const</span> meter = <span class="text-brand">new</span> <span class="text-ink">Tollgate</span>(process.env.<span class="text-ink">TOLLGATE_KEY</span>)
+
+<span class="text-brand">await</span> meter.<span class="text-ink">record</span>({
+  customer: <span class="text-brand">"acme"</span>,
+  metric:   <span class="text-brand">"api_calls"</span>,
+  quantity: <span class="text-ink">1</span>,
+})</code></pre>
+            <div class="flex items-center justify-between gap-3 border-t border-line bg-panel px-5 py-3 font-mono text-xs">
+              <span class="text-faint">invoice preview</span>
+              <span class="text-muted">142,308 calls <span class="text-brand">-&gt;</span> <span class="text-ink">$284.62</span> / Sep</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGOS -->
+    <section class="border-b border-line bg-canvas py-10" aria-label="Customers">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <p class="text-center text-xs font-medium uppercase tracking-widest text-faint">Metering usage for teams at</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-6 text-muted">
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18 12 4l8 14z"/></svg> Hexwell</span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" fill="var(--canvas)"/></svg> Parallel</span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="5"/><rect x="9" y="9" width="6" height="6" rx="2" fill="var(--canvas)"/></svg> Beacon</span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M12 4v16"/></svg> Northwind</span>
+          <span class="flex items-center gap-2 font-semibold tracking-tight opacity-80"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M12 2 4 7v10l8 5 8-5V7z"/><path d="M12 7 8 9.5v5L12 17l4-2.5v-5z" fill="var(--canvas)"/></svg> Quarry</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM · statement + a list of what breaks -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto grid max-w-6xl gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
+        <div class="reveal">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Rolling your own usage billing is a second product.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted">
+            It looks like a counter and a cron job. Then real traffic arrives, an event gets counted twice, a customer disputes their invoice, and now an engineer owns billing instead of the roadmap.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-muted">
+            Metering is a hard, boring, high-stakes problem. Tollgate is the team that already solved it.
+          </p>
+        </div>
+        <ul class="reveal reveal-d1 space-y-px overflow-hidden rounded-xl border border-line bg-line">
+          <li class="flex items-start gap-3 bg-canvas p-5">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-faint" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <p class="text-sm leading-relaxed text-muted"><span class="font-semibold text-ink">Double counting.</span> Retries and at-least-once delivery quietly inflate invoices until someone complains.</p>
+          </li>
+          <li class="flex items-start gap-3 bg-canvas p-5">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-faint" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <p class="text-sm leading-relaxed text-muted"><span class="font-semibold text-ink">Proration and plan changes.</span> Mid-cycle upgrades and credits turn into a spreadsheet nobody trusts.</p>
+          </li>
+          <li class="flex items-start gap-3 bg-canvas p-5">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-faint" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <p class="text-sm leading-relaxed text-muted"><span class="font-semibold text-ink">Disputes with no receipts.</span> A customer asks "why $284?" and you cannot show the line items.</p>
+          </li>
+          <li class="flex items-start gap-3 bg-canvas p-5">
+            <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-faint" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <p class="text-sm leading-relaxed text-muted"><span class="font-semibold text-ink">Scale.</span> Counting a billion events a month is its own infrastructure project.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS · code-driven 3 steps -->
+    <section id="how" class="border-y border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Three steps from event to invoice.</h2>
+          <p class="mt-4 text-lg text-muted">It is an SDK call and a pricing rule. Tollgate handles the counting, the math, and the money.</p>
+        </div>
+
+        <div class="mt-12 grid gap-5 lg:grid-cols-3">
+          <div class="reveal rounded-xl border border-line bg-card p-6 shadow-soft">
+            <div class="flex items-center gap-3">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand text-sm font-semibold text-on-brand">1</span>
+              <h3 class="font-semibold">Install the SDK</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-muted">One package. Works with Node, Python, Go, and a plain HTTP endpoint.</p>
+            <pre class="mt-4 overflow-x-auto rounded-lg border border-line bg-panel p-3 font-mono text-xs text-ink"><code>npm i tollgate</code></pre>
+          </div>
+          <div class="reveal reveal-d1 rounded-xl border border-line bg-card p-6 shadow-soft">
+            <div class="flex items-center gap-3">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand text-sm font-semibold text-on-brand">2</span>
+              <h3 class="font-semibold">Record usage</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Drop one line where usage happens. Idempotency keys stop double counting.</p>
+            <pre class="mt-4 overflow-x-auto rounded-lg border border-line bg-panel p-3 font-mono text-xs"><code><span class="text-ink">meter.</span><span class="text-brand">record</span><span class="text-ink">({ metric, qty })</span></code></pre>
+          </div>
+          <div class="reveal reveal-d2 rounded-xl border border-line bg-card p-6 shadow-soft">
+            <div class="flex items-center gap-3">
+              <span class="grid h-8 w-8 place-items-center rounded-lg bg-brand text-sm font-semibold text-on-brand">3</span>
+              <h3 class="font-semibold">Let Tollgate bill</h3>
+            </div>
+            <p class="mt-3 text-sm leading-relaxed text-muted">Set your pricing once. Invoices generate and sync to Stripe automatically.</p>
+            <pre class="mt-4 overflow-x-auto rounded-lg border border-line bg-panel p-3 font-mono text-xs"><code><span class="text-faint"># $0.002 / call, monthly</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES · zigzag (2 rows, then a checklist) -->
+    <section id="features" class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Metering you can put in front of finance.</h2>
+          <p class="mt-4 text-lg text-muted">Accurate to the event, auditable to the cent, flexible enough for how you actually price.</p>
+        </div>
+
+        <!-- Row 1: text left, chart right -->
+        <div class="mt-14 grid items-center gap-10 lg:grid-cols-2">
+          <div class="reveal">
+            <h3 class="text-2xl font-semibold tracking-tight">See usage as it happens</h3>
+            <p class="mt-3 leading-relaxed text-muted">Live counts per customer and per metric, with the same numbers your invoices use. No nightly batch, no surprises at month end.</p>
+            <ul class="mt-5 space-y-2.5 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Real-time aggregation across regions</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Usage alerts before a customer overspends</span></li>
+            </ul>
+          </div>
+          <div class="reveal reveal-d1 rounded-xl border border-line bg-card p-6 shadow-soft">
+            <div class="flex items-end justify-between">
+              <div>
+                <p class="font-mono text-xs text-faint">api_calls / 30d</p>
+                <p class="mt-1 text-3xl font-semibold tracking-tight">142,308</p>
+              </div>
+              <span class="rounded-md bg-brand-soft px-2 py-1 font-mono text-xs text-brand">+18%</span>
+            </div>
+            <div class="mt-6 flex h-28 items-end gap-1.5" aria-hidden="true">
+              <div class="w-full rounded-t bg-brand/25" style="height:38%"></div>
+              <div class="w-full rounded-t bg-brand/30" style="height:52%"></div>
+              <div class="w-full rounded-t bg-brand/25" style="height:44%"></div>
+              <div class="w-full rounded-t bg-brand/40" style="height:66%"></div>
+              <div class="w-full rounded-t bg-brand/35" style="height:58%"></div>
+              <div class="w-full rounded-t bg-brand/55" style="height:80%"></div>
+              <div class="w-full rounded-t bg-brand/45" style="height:70%"></div>
+              <div class="w-full rounded-t bg-brand" style="height:96%"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: rules left, text right -->
+        <div class="mt-16 grid items-center gap-10 lg:grid-cols-2">
+          <div class="reveal order-2 lg:order-1 rounded-xl border border-line bg-card p-6 shadow-soft">
+            <p class="font-mono text-xs text-faint">pricing.rules</p>
+            <div class="mt-4 space-y-2.5">
+              <div class="flex items-center justify-between rounded-lg border border-line bg-panel px-4 py-3 text-sm">
+                <span class="text-muted">First 10k calls</span><span class="font-mono text-ink">free</span>
+              </div>
+              <div class="flex items-center justify-between rounded-lg border border-line bg-panel px-4 py-3 text-sm">
+                <span class="text-muted">10k to 1M</span><span class="font-mono text-ink">$0.0020 / call</span>
+              </div>
+              <div class="flex items-center justify-between rounded-lg border border-brand/30 bg-brand-soft px-4 py-3 text-sm">
+                <span class="text-ink">1M and up</span><span class="font-mono text-brand">$0.0012 / call</span>
+              </div>
+            </div>
+          </div>
+          <div class="reveal reveal-d1 order-1 lg:order-2">
+            <h3 class="text-2xl font-semibold tracking-tight">Price it however you sell</h3>
+            <p class="mt-3 leading-relaxed text-muted">Per unit, tiered, volume, package, or a flat fee plus overage. Change a rule and the next invoice reflects it. No migration, no redeploy.</p>
+            <ul class="mt-5 space-y-2.5 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Tiered, volume, and package pricing</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Credits, trials, and mid-cycle proration</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Secondary features: a 2-col checklist (a different family, not 3 cards) -->
+        <div class="reveal mt-16 grid gap-x-10 gap-y-5 rounded-xl border border-line bg-card p-7 shadow-soft sm:grid-cols-2">
+          <div class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><div><p class="font-medium">Exactly-once counting</p><p class="text-sm text-muted">Idempotency keys dedupe retries automatically.</p></div></div>
+          <div class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M5 5h11a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h11"/></svg><div><p class="font-medium">Multi-currency</p><p class="text-sm text-muted">Bill customers in their currency, settle in yours.</p></div></div>
+          <div class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2M4 7h16M6 7v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7"/></svg><div><p class="font-medium">Stripe and QuickBooks sync</p><p class="text-sm text-muted">Invoices and payments land where finance works.</p></div></div>
+          <div class="flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/><path d="m9 12 2 2 4-4"/></svg><div><p class="font-medium">Audit trail</p><p class="text-sm text-muted">Every billed event is queryable down to the line item.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE · a B2B layout family Aurora does not have -->
+    <section class="border-y border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-5xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Buy the months you would spend building it.</h2>
+          <p class="mt-4 text-lg text-muted">What it takes to get usage billing right, three ways.</p>
+        </div>
+
+        <div class="reveal reveal-d1 mt-12 overflow-x-auto rounded-xl border border-line bg-card shadow-soft">
+          <table class="w-full min-w-[640px] text-left text-sm">
+            <thead>
+              <tr class="border-b border-line bg-panel">
+                <th class="p-4 font-medium text-muted">Capability</th>
+                <th class="p-4 text-center font-medium text-muted">Build it yourself</th>
+                <th class="p-4 text-center font-medium text-muted">Generic billing tool</th>
+                <th class="p-4 text-center font-semibold text-brand">Tollgate</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-line">
+              <tr>
+                <td class="p-4 text-ink">Event-accurate metering at scale</td>
+                <td class="p-4 text-center"><span class="text-faint">months of work</span></td>
+                <td class="p-4 text-center"><span class="text-faint">limited</span></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-5 w-5 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></td>
+              </tr>
+              <tr>
+                <td class="p-4 text-ink">Exactly-once counting</td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-4 w-4 text-faint" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-4 w-4 text-faint" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-5 w-5 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></td>
+              </tr>
+              <tr>
+                <td class="p-4 text-ink">Flexible pricing rules</td>
+                <td class="p-4 text-center"><span class="text-faint">hand-rolled</span></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-5 w-5 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-5 w-5 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></td>
+              </tr>
+              <tr>
+                <td class="p-4 text-ink">Audit trail for disputes</td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-4 w-4 text-faint" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></td>
+                <td class="p-4 text-center"><span class="text-faint">partial</span></td>
+                <td class="p-4 text-center"><svg viewBox="0 0 24 24" class="mx-auto h-5 w-5 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></td>
+              </tr>
+              <tr>
+                <td class="p-4 text-ink">Time to first invoice</td>
+                <td class="p-4 text-center"><span class="text-faint">a quarter</span></td>
+                <td class="p-4 text-center"><span class="text-faint">weeks</span></td>
+                <td class="p-4 text-center font-medium text-brand">an afternoon</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL · single full-width quote (distinct from Aurora) -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 text-center sm:px-6">
+        <figure class="reveal">
+          <blockquote class="text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
+            "We ripped out eight months of homegrown billing code and replaced it with Tollgate in a week. Our invoices finally match what customers actually used, and an engineer got their week back."
+          </blockquote>
+          <figcaption class="mt-8 flex items-center justify-center gap-3">
+            <span class="grid h-11 w-11 place-items-center rounded-full bg-brand-soft text-sm font-semibold text-brand">DK</span>
+            <div class="text-left">
+              <p class="font-semibold">Dina Kovac</p>
+              <p class="text-sm text-muted">Platform Lead, Hexwell</p>
+            </div>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- PRICING · usage-based framing -->
+    <section id="pricing" class="border-t border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">You meter your customers. We meter you the same way.</h2>
+          <p class="mt-4 text-lg text-muted">Start free. Pay a small percentage of what you bill through Tollgate, nothing more.</p>
+        </div>
+
+        <div class="mt-14 grid items-start gap-6 lg:grid-cols-3">
+          <div class="reveal rounded-xl border border-line bg-card p-7 shadow-soft">
+            <h3 class="font-semibold">Developer</h3>
+            <p class="mt-1 text-sm text-muted">For side projects and testing.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">$0</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-line bg-card px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Start free</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Up to 50k events / month</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">All pricing models</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Community support</span></li>
+            </ul>
+          </div>
+
+          <div class="reveal reveal-d1 relative rounded-xl border-2 border-brand bg-card p-7 shadow-lift">
+            <span class="absolute -top-3 left-7 rounded-md bg-brand px-3 py-1 text-xs font-semibold text-on-brand">Most teams</span>
+            <h3 class="font-semibold">Growth</h3>
+            <p class="mt-1 text-sm text-muted">For products billing real revenue.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">0.5%</span><span class="text-muted"> of billed volume</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-lg bg-brand px-5 py-2.5 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Start free</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Unlimited events</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Stripe and QuickBooks sync</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Usage alerts and audit trail</span></li>
+            </ul>
+          </div>
+
+          <div class="reveal reveal-d2 rounded-xl border border-line bg-card p-7 shadow-soft">
+            <h3 class="font-semibold">Enterprise</h3>
+            <p class="mt-1 text-sm text-muted">For high volume and compliance.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">Custom</span></p>
+            <a href="#" class="mt-6 inline-flex w-full items-center justify-center rounded-lg border border-line bg-card px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Talk to us</a>
+            <ul class="mt-7 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Volume rate and SLA</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">SSO, SOC 2, and data residency</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Dedicated support</span></li>
+            </ul>
+          </div>
+        </div>
+        <p class="reveal mt-8 text-center text-sm text-muted">No card to start. You only pay once Tollgate is billing real money for you.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <h2 class="reveal text-center text-3xl font-semibold tracking-tight sm:text-4xl">Questions, answered.</h2>
+        <div class="reveal mt-10 divide-y divide-line border-y border-line">
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">How accurate is the counting?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Every event you send carries an idempotency key, so retries and at-least-once delivery never double count. The number on the invoice is the number you can reproduce from the audit trail.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Will recording usage slow down my API?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">No. The SDK buffers and sends usage asynchronously, so a record call returns in microseconds and never sits in your request path.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Can I keep using Stripe?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. Tollgate does the metering and the math, then pushes finished invoices into Stripe for collection. You keep your existing payments setup.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">How do I migrate existing customers?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Import customers and current plans from a CSV or the API, then start sending events. You can run Tollgate in shadow mode next to your old system until the numbers match.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Is my usage data secure?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Events are encrypted in transit and at rest. Enterprise plans add SSO, SOC 2 reports, and a choice of data region.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="px-5 pb-20 sm:px-6 md:pb-28">
+      <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-2xl border border-line bg-card p-10 text-center shadow-lift sm:p-14">
+        <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Send your first invoice this afternoon.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-muted">Install the SDK, send a few events, and watch a real invoice appear. Free until Tollgate is billing money for you.</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#pricing" class="inline-flex items-center gap-2 rounded-lg bg-brand px-7 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Start free
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#" class="inline-flex items-center gap-2 rounded-lg border border-line bg-card px-7 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Read the docs</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-6">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="lg:col-span-2">
+          <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+            <span class="text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M3 9h18M9 9v11"/></svg></span>
+            <span class="text-[17px]">Tollgate</span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">Usage-based billing for APIs. Meter, price, and invoice without a billing team.</p>
+          <div class="mt-5 flex items-center gap-3">
+            <a href="#" aria-label="GitHub" class="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition hover:bg-panel hover:text-ink"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+            <a href="#" aria-label="X" class="grid h-9 w-9 place-items-center rounded-lg border border-line text-muted transition hover:bg-panel hover:text-ink"><svg viewBox="0 0 24 24" class="h-3.5 w-3.5" fill="currentColor"><path d="M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Product</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#features" class="transition hover:text-ink">Features</a></li>
+            <li><a href="#pricing" class="transition hover:text-ink">Pricing</a></li>
+            <li><a href="#" class="transition hover:text-ink">Docs</a></li>
+            <li><a href="#" class="transition hover:text-ink">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Company</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">About</a></li>
+            <li><a href="#" class="transition hover:text-ink">Blog</a></li>
+            <li><a href="#" class="transition hover:text-ink">Status</a></li>
+            <li><a href="#" class="transition hover:text-ink">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Legal</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">Privacy</a></li>
+            <li><a href="#" class="transition hover:text-ink">Terms</a></li>
+            <li><a href="#" class="transition hover:text-ink">Security</a></li>
+            <li><a href="#" class="transition hover:text-ink">DPA</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 sm:flex-row">
+        <p class="text-sm text-faint">&copy; 2026 Tollgate. All rights reserved.</p>
+        <p class="text-sm text-faint">Built with <a href="#" class="font-medium text-muted transition hover:text-ink">Pagewright</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

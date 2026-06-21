@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================= -->
+  <!-- PAGEWRIGHT · sales site (this page is itself built with the     -->
+  <!-- Pagewright design system). Replace the BUY links (marked with   -->
+  <!-- a comment) with your Gumroad / Lemon Squeezy product URL.       -->
+  <!-- ============================================================= -->
+
+  <title>Pagewright: conversion-engineered landing page templates, copy included</title>
+  <meta name="description" content="Two premium landing page templates with the conversion structure and the copywriting already written. Plain HTML and Tailwind, no build step. Ship a page that looks funded, in about an hour." />
+  <link rel="canonical" href="https://leonbede7.github.io/pagewright/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pagewright: landing page templates with the copy already written" />
+  <meta property="og:description" content="The conversion structure and the words are done. Plain HTML + Tailwind, no build step. Ship in an hour." />
+  <meta property="og:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+  <meta property="og:url" content="https://leonbede7.github.io/pagewright/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pagewright: landing page templates with the copy already written" />
+  <meta name="twitter:description" content="The conversion structure and the words are done. Plain HTML + Tailwind, no build step." />
+  <meta name="twitter:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/site.webmanifest" />
+
+  <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/>
+            <rect x="8" y="3" width="13" height="15" rx="2.5"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#templates" class="text-sm text-muted transition hover:text-ink">Templates</a>
+        <a href="#how" class="text-sm text-muted transition hover:text-ink">Why it converts</a>
+        <a href="#pricing" class="text-sm text-muted transition hover:text-ink">Pricing</a>
+        <a href="#faq" class="text-sm text-muted transition hover:text-ink">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <!-- BUY LINK: replace href with your Gumroad / Lemon Squeezy product URL -->
+        <a href="#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get Pagewright</a>
+        <button data-mobile-toggle type="button" aria-label="Open menu" aria-expanded="false" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink md:hidden">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div data-mobile-menu class="hidden border-t border-line bg-canvas md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
+        <a href="#templates" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Templates</a>
+        <a href="#how" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Why it converts</a>
+        <a href="#pricing" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Pricing</a>
+        <a href="#faq" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-24 sm:px-6 md:pt-16 lg:grid-cols-[1fr_1.1fr] lg:gap-10 lg:pb-32">
+        <div class="reveal max-w-xl">
+          <span class="inline-flex items-center gap-2 rounded-full border border-line bg-panel px-3 py-1 text-xs font-medium text-muted">
+            <span class="h-1.5 w-1.5 rounded-full bg-ink"></span> This page was built with Pagewright
+          </span>
+          <h1 class="mt-5 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+            Landing pages with the copy already written.
+          </h1>
+          <p class="mt-5 max-w-md text-lg leading-relaxed text-muted">
+            Two premium templates that do the two hardest jobs for you: the structure that converts, and the words that fill it. Plain HTML and Tailwind, no build step.
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <!-- BUY LINK: replace href with your Gumroad / Lemon Squeezy product URL -->
+            <a href="#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+              Get Pagewright
+              <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#templates" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">
+              See the templates
+            </a>
+          </div>
+        </div>
+
+        <!-- Two template previews in browser frames, overlapping -->
+        <div class="reveal reveal-d2 relative">
+          <div class="overflow-hidden rounded-2xl border border-line bg-card shadow-lift">
+            <div class="flex items-center gap-2 border-b border-line bg-panel px-4 py-2.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/50"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/40"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-faint/30"></span>
+              <span class="ml-2 font-mono text-xs text-faint">aurora</span>
+            </div>
+            <img src="assets/img/preview-aurora.png" width="1200" height="630" alt="Aurora template preview" class="block w-full" />
+          </div>
+          <div class="absolute -bottom-10 -right-2 w-2/3 overflow-hidden rounded-2xl border border-line bg-card shadow-lift sm:-right-6 lg:-bottom-12">
+            <div class="flex items-center gap-2 border-b border-line bg-panel px-4 py-2">
+              <span class="h-2 w-2 rounded-full bg-faint/50"></span>
+              <span class="h-2 w-2 rounded-full bg-faint/40"></span>
+              <span class="ml-2 font-mono text-[11px] text-faint">ledger</span>
+            </div>
+            <img src="assets/img/preview-ledger.png" width="1200" height="630" alt="Ledger template preview" class="block w-full" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM / DIFFERENTIATOR -->
+    <section id="how" class="border-t border-line py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Most templates give you an empty shell.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted">
+            They hand you a pretty layout and leave the two parts that actually decide whether anyone buys: the order of the sections, and the words inside them. So you stare at a blank hero and ship something flat.
+          </p>
+          <p class="mt-4 text-lg leading-relaxed text-muted">
+            Pagewright does both for you, and shows its work. The structure follows a proven persuasion flow, and every section comes with a note explaining why it is built that way, so you can rewrite the copy without breaking what converts.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+          <div class="bg-canvas p-7">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-ink" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h10M4 19h16"/></svg>
+            <h3 class="mt-4 font-semibold">Structure that converts</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">The section order follows problem, agitate, solution, then attention, interest, desire, action. Proven, not decorative.</p>
+          </div>
+          <div class="bg-canvas p-7">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-ink" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a4 4 0 0 0-6-5l-1 1-1-1a4 4 0 0 0-6 5z"/></svg>
+            <h3 class="mt-4 font-semibold">Copywriting included</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Real headlines, benefit-led features, anchored pricing, and an objection-killing FAQ. Plus a worksheet to make it yours.</p>
+          </div>
+          <div class="bg-canvas p-7">
+            <svg viewBox="0 0 24 24" class="h-7 w-7 text-ink" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18 22 12 16 6M8 6 2 12l6 6"/></svg>
+            <h3 class="mt-4 font-semibold">No build step</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Plain HTML and precompiled Tailwind. Open it, edit the words, drag a folder to deploy. Works with any AI assistant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMPLATES -->
+    <section id="templates" class="border-t border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Two templates. One design system.</h2>
+          <p class="mt-4 text-lg text-muted">Pick the one that fits your product, or use both. They are built to sit together.</p>
+        </div>
+
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          <article class="reveal overflow-hidden rounded-2xl border border-line bg-card shadow-soft">
+            <img src="assets/img/preview-aurora.png" width="1200" height="630" alt="Aurora template" class="block w-full border-b border-line" />
+            <div class="p-7">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full" style="background:#3056f5"></span>
+                <h3 class="text-lg font-semibold">Aurora</h3>
+                <span class="text-sm text-muted">for SaaS and AI products</span>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-muted">An asymmetric hero with a real product UI, a benefit-led bento, a showcase, testimonials, and anchored pricing. Cobalt accent.</p>
+              <a href="aurora/" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ink transition hover:gap-2.5">
+                Live preview
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="reveal reveal-d1 overflow-hidden rounded-2xl border border-line bg-card shadow-soft">
+            <img src="assets/img/preview-ledger.png" width="1200" height="630" alt="Ledger template" class="block w-full border-b border-line" />
+            <div class="p-7">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full" style="background:#047857"></span>
+                <h3 class="text-lg font-semibold">Ledger</h3>
+                <span class="text-sm text-muted">for developer tools and B2B</span>
+              </div>
+              <p class="mt-3 text-sm leading-relaxed text-muted">A code-driven hero, a three-way comparison table, usage-based pricing, and a single strong quote. Emerald accent.</p>
+              <a href="ledger/" class="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-ink transition hover:gap-2.5">
+                Live preview
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+        <p class="reveal mt-6 text-center text-xs text-muted">Live previews open the included templates. Host them yourself for free; the README shows you how.</p>
+      </div>
+    </section>
+
+    <!-- WHAT'S INCLUDED -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Everything you need to ship, in one download.</h2>
+        </div>
+        <div class="mt-10 grid gap-x-10 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">Two templates</p><p class="text-sm text-muted">Aurora and Ledger, fully responsive, light and dark.</p></div></div>
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">The annotations</p><p class="text-sm text-muted">A why-this-converts note for every single section.</p></div></div>
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">Copywriting worksheet</p><p class="text-sm text-muted">A fill-in-the-blanks framework for your own copy.</p></div></div>
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">Social and SEO assets</p><p class="text-sm text-muted">Favicons, a 1200x630 OG image, and copy-paste meta tags.</p></div></div>
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">Deploy guide</p><p class="text-sm text-muted">Get live free on Cloudflare Pages, Netlify, or GitHub Pages.</p></div></div>
+          <div class="reveal flex gap-3"><svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><p class="font-medium">Commercial license</p><p class="text-sm text-muted">Use it for your products and paid client work.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="border-t border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">One price. Both templates. Yours forever.</h2>
+          <p class="mt-4 text-lg text-muted">A designer and a copywriter would cost thousands. This costs less than dinner.</p>
+        </div>
+
+        <div class="reveal reveal-d1 mt-12 overflow-hidden rounded-2xl border border-line bg-card shadow-lift">
+          <div class="grid sm:grid-cols-2">
+            <div class="border-b border-line p-8 sm:border-b-0 sm:border-r">
+              <h3 class="font-semibold">Pagewright Pro</h3>
+              <p class="mt-1 text-sm text-muted">Both templates and the full kit.</p>
+              <div class="mt-6 flex items-end gap-2">
+                <span class="text-5xl font-semibold tracking-tight">$29</span>
+                <span class="mb-1 text-lg text-faint line-through">$39</span>
+              </div>
+              <p class="mt-1 text-xs text-muted">Launch price for the first two weeks. About 27 EUR.</p>
+              <!-- BUY LINK: replace href with your Gumroad / Lemon Squeezy product URL -->
+              <a href="#" class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+                Get Pagewright
+                <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+              <p class="mt-3 text-center text-xs text-muted">One-time payment. Free updates. 14-day refund.</p>
+            </div>
+            <div class="p-8">
+              <p class="text-sm font-semibold">What you get</p>
+              <ul class="mt-4 space-y-3 text-sm">
+                <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Aurora and Ledger templates</span></li>
+                <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">The conversion annotations</span></li>
+                <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Copy worksheet and meta tags</span></li>
+                <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Social and favicon assets</span></li>
+                <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-ink" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Commercial license, future templates</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <p class="reveal mt-6 text-center text-sm text-muted">Want to try the build quality first? <a href="#" class="font-medium text-ink underline-offset-4 hover:underline">Pagewright Lite</a> is one template, free.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 md:py-28">
+      <div class="mx-auto max-w-3xl px-5 sm:px-6">
+        <h2 class="reveal text-center text-3xl font-semibold tracking-tight sm:text-4xl">Questions, answered.</h2>
+        <div class="reveal mt-10 divide-y divide-line border-y border-line">
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Do I need to know how to code?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">If you can edit text in a file, you can use Pagewright. It is plain HTML, so you change the words directly, or ask an AI assistant to do it. No framework, no build tools, no terminal required.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">How is this different from a free template?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Free templates give you an empty layout. Pagewright gives you the section order that converts and the words to fill it, with a written explanation of why each part works. That is the expensive part, and it is done.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Can I use it for client work?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. Use it on unlimited personal and paid client projects. The only thing you cannot do is resell the templates themselves as templates.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Where can I host it?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Anywhere static files run, for free: Cloudflare Pages, Netlify, GitHub Pages, or your own server. The included README walks you through it in a few minutes.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">What if it is not for me?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Email within 14 days for a full refund. No form, no friction. A good product should not need to trap anyone.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="px-5 pb-20 sm:px-6 md:pb-28">
+      <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-line bg-card p-10 text-center shadow-lift sm:p-14">
+        <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Ship the page tonight.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-muted">Stop staring at a blank hero. Get two pages that are built to convert, with the words already written.</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <!-- BUY LINK: replace href with your Gumroad / Lemon Squeezy product URL -->
+          <a href="#" class="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Get Pagewright
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#templates" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-7 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">See the templates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 sm:flex-row sm:px-6">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/><rect x="8" y="3" width="13" height="15" rx="2.5"/></svg></span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <p class="text-sm text-faint">Conversion-engineered landing pages, with the copy already written.</p>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="#templates" class="transition hover:text-ink">Templates</a>
+        <a href="#pricing" class="transition hover:text-ink">Pricing</a>
+        <a href="guide/" class="transition hover:text-ink">Guide</a>
+        <a href="#faq" class="transition hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>

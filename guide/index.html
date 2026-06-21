@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>The anatomy of a landing page that converts | Pagewright</title>
+  <meta name="description" content="A plain-English breakdown of the section order and copy that make a landing page convert: hero, problem, proof, pricing, and the one action. With examples you can copy." />
+  <link rel="canonical" href="https://leonbede7.github.io/pagewright/guide/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The anatomy of a landing page that converts" />
+  <meta property="og:description" content="The section order and copy that make a landing page convert, explained in plain English with examples." />
+  <meta property="og:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+  <meta property="og:url" content="https://leonbede7.github.io/pagewright/guide/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The anatomy of a landing page that converts" />
+  <meta name="twitter:description" content="The section order and copy that make a landing page convert, explained in plain English." />
+  <meta name="twitter:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <!-- Article typography (scoped). Uses the global design tokens. -->
+  <style>
+    .prose { max-width: 68ch; color: var(--muted); font-size: 1.0625rem; line-height: 1.75; }
+    .prose h2 { color: var(--ink); font-size: 1.55rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-top: 2.4em; margin-bottom: 0.5em; }
+    .prose h3 { color: var(--ink); font-size: 1.15rem; font-weight: 600; margin-top: 1.8em; margin-bottom: 0.35em; }
+    .prose p { margin-bottom: 1.15em; }
+    .prose ul { margin: 0.6em 0 1.4em; padding-left: 1.25em; list-style: disc; }
+    .prose li { margin-bottom: 0.45em; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .prose blockquote { border-left: 3px solid var(--brand); padding-left: 1.1em; color: var(--ink); font-style: italic; margin: 1.5em 0; }
+    .prose code { font-family: var(--font-mono); font-size: 0.92em; background: var(--panel); padding: 0.12em 0.4em; border-radius: 5px; }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/>
+            <rect x="8" y="3" width="13" height="15" rx="2.5"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get Pagewright</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article class="mx-auto max-w-3xl px-5 py-14 sm:px-6 md:py-20">
+      <header>
+        <p class="text-sm font-medium text-muted"><a href="../" class="transition hover:text-ink">Pagewright</a> / Guide</p>
+        <h1 class="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">The anatomy of a landing page that converts.</h1>
+        <p class="mt-4 text-lg text-muted">There is a reason good landing pages feel similar. They are not copying a look, they are following the same order of persuasion. Here is that order, in plain English, with the words that go in each part.</p>
+        <p class="mt-4 text-sm text-faint">About a 6 minute read.</p>
+      </header>
+
+      <div class="prose mt-10">
+        <p>Most landing pages fail for the same two reasons: the sections are in the wrong order, and the words are vague. Design gets the attention, but order and words are what move someone from "interesting" to "I bought it." The good news is that both follow rules you can learn in one sitting.</p>
+
+        <p>The spine of a converting page is <strong>Problem, Agitate, Solution</strong>, wrapped inside <strong>Attention, Interest, Desire, Action</strong>. In practice that becomes a specific run of sections. We will go through them in order.</p>
+
+        <h2>1. The hero passes the five-second test</h2>
+        <p>If a stranger reads only your hero and nothing else, they should understand what you do and what they get. That means three things, and only three:</p>
+        <ul>
+          <li>A headline that states the <strong>outcome</strong>, not a feature. "Your daily standup, written for you" is an outcome. "AI-powered summarization engine" is a feature talking to itself.</li>
+          <li>A subhead that explains the <strong>mechanism</strong> in one sentence. This is where belief lives: how the outcome actually happens.</li>
+          <li><strong>One</strong> primary action. A quieter secondary link is fine for people who are not ready, but never two loud buttons fighting each other.</li>
+        </ul>
+        <p>Resist the urge to cram a trust badge, a feature list, and a tagline into the hero. A crowded hero converts worse than a clear one. Everything else has its own section below.</p>
+
+        <h2>2. Borrow credibility right away</h2>
+        <p>Doubt appears the moment after the hero. A thin strip of logos ("used by teams at...") answers it before it grows. No customers yet? Use the logos of tools you integrate with, or a publication that mentioned you, or leave the strip out. Never invent companies on your real site.</p>
+
+        <h2>3. Make the problem hurt a little</h2>
+        <p>Before anyone wants a solution, they have to feel the problem. Name the cost of the current situation in concrete terms: time lost, things that slip, money left on the table. Vague pain ("things are inefficient") moves no one. Specific pain does:</p>
+        <blockquote>A daily standup for eight people is a full work-day lost every week, before anyone writes a line of code.</blockquote>
+        <p>That sentence works because it is countable. The reader does the math and winces.</p>
+
+        <h2>4. Show how easy it is</h2>
+        <p>People assume new tools are a hassle to adopt, so the "how it works" section has one job: reduce perceived effort. Three steps, no more, with verbs for titles ("Connect", "Import", "Ship"), not "Step 1, Step 2, Step 3." If it takes more than three steps to explain, the onboarding is the problem, not the copy.</p>
+
+        <h2>5. Turn features into benefits</h2>
+        <p>Every feature should lead with the outcome and explain the mechanism underneath. The test is simple: finish the sentence "so you can..." for each feature, then put that on the page.</p>
+        <ul>
+          <li>Feature: "GitHub API integration." Benefit: "so you can see what actually shipped, not what people remembered to write down."</li>
+          <li>Feature: "Role-based access." Benefit: "so you can hand it to the team without handing over the keys."</li>
+        </ul>
+        <p>And kill the three identical feature cards. Vary the layout so the eye does not glaze over.</p>
+
+        <h2>6. Prove it with one real voice</h2>
+        <p>Social proof answers the quiet question "does this work for people like me?" One specific, believable testimonial beats six generic ones. Always include a name, a role, and a company. A quote signed "- Sarah" reads as invented, because it usually is. Keep each quote to three lines.</p>
+
+        <h2>7. Price with an anchor</h2>
+        <p>Show two or three tiers and highlight the one you want chosen, usually the middle. The highlighted anchor is the one most people pick. A free or low tier lowers the risk of starting. Then add one line under the table that removes the last hesitation: "No credit card to start. Cancel anytime." Small sentence, large effect.</p>
+
+        <h2>8. Handle objections as an FAQ</h2>
+        <p>An FAQ is objection handling in disguise. Each question is a reason someone might not buy: "do you store my data?", "how long does setup take?", "can I cancel?" Answer the real fears plainly. If you know the top objection from talking to users, make it the first question.</p>
+
+        <h2>9. Ask once, clearly</h2>
+        <p>The final call to action restates the transformation in one line and offers exactly one action, the same action as the hero, with the same words. Do not introduce new information here. By now the reader is convinced or not. Just ask.</p>
+
+        <h2>The rules that apply everywhere</h2>
+        <ul>
+          <li><strong>One page, one promise, one action.</strong> Every section either builds belief in the promise or removes a reason not to act. If it does neither, cut it.</li>
+          <li><strong>Write to one person.</strong> Copy that tries to speak to everyone speaks to no one.</li>
+          <li><strong>Specific beats clever.</strong> A concrete sentence always outperforms a witty vague one.</li>
+          <li><strong>Cut by a third.</strong> Once it reads well, remove a third of the words. It will read better.</li>
+        </ul>
+
+        <p>None of this is a secret. It is just work that most people skip because it is harder than picking a nice font. Do the order and the words well and an ordinary-looking page will outconvert a beautiful empty one every time.</p>
+      </div>
+
+      <!-- CTA card -->
+      <div class="mt-14 rounded-2xl border border-line bg-card p-8 shadow-soft">
+        <h2 class="text-2xl font-semibold tracking-tight">Or skip the blank page.</h2>
+        <p class="mt-3 text-muted">Pagewright is two landing page templates with this whole structure built in and the copy already written, annotated section by section so you can make it yours without breaking what converts. Plain HTML and Tailwind, no build step.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="../#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Get Pagewright
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="../#templates" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">See the templates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 sm:flex-row sm:px-6">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/><rect x="8" y="3" width="13" height="15" rx="2.5"/></svg></span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <p class="text-sm text-faint">Conversion-engineered landing pages, with the copy already written.</p>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="../#templates" class="transition hover:text-ink">Templates</a>
+        <a href="../#pricing" class="transition hover:text-ink">Pricing</a>
+        <a href="../#faq" class="transition hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js" defer></script>
+</body>
+</html>
