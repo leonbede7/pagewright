@@ -27,9 +27,9 @@ cd pagewright/lite
 
 ## Pro: the full kit
 
-**Pagewright Pro** is two premium templates plus the parts that actually take time:
+**Pagewright Pro** is three premium templates plus the parts that actually take time:
 
-- **Aurora** (for SaaS and AI products) and **Ledger** (for developer tools and B2B).
+- **Aurora** (SaaS and AI products), **Ledger** (developer tools and B2B), and **Bloom** (consumer and mobile apps).
 - The conversion **annotations**: a "why this converts" note for every section.
 - A fill-in-the-blanks **copywriting worksheet**.
 - Favicons, a 1200x630 social image, and copy-paste meta tags.
@@ -48,7 +48,7 @@ Even if you never buy anything: [The anatomy of a landing page that converts](ht
 | Path | What it is | License |
 |------|-----------|---------|
 | `/` (index.html, guide, assets) | The Pagewright sales site (also the live demo) | Demo. All rights reserved. |
-| `/aurora`, `/ledger` | Live previews of the Pro templates | Demo. All rights reserved. Sold under a commercial license in Pro. |
+| `/aurora`, `/ledger`, `/bloom` | Live previews of the Pro templates | Demo. All rights reserved. Sold under a commercial license in Pro. |
 | `/lite` | The free Pagewright Lite template | Free, with attribution (see `/lite/LICENSE`) |
 
 The Pro-only materials (annotations, worksheet, build setup, commercial license) are not in this public repo. They come with the paid kit.

@@ -1,0 +1,15 @@
+{
+  "name": "Fern",
+  "short_name": "Fern",
+  "description": "Keep every plant alive. Plant identification, care schedules, and gentle reminders.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbfbfd",
+  "theme_color": "#c2185b",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

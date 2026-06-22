@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================= -->
+  <!-- PAGEWRIGHT · BLOOM                                              -->
+  <!-- A consumer / mobile-app landing template. Demo product:        -->
+  <!-- a fictional plant-care app, "Fern". Replace the copy, links,    -->
+  <!-- and the 8 color variables in assets/css/styles.css.             -->
+  <!-- ============================================================= -->
+
+  <title>Fern: keep every plant alive</title>
+  <meta name="description" content="Fern identifies your plants, builds a care schedule for each one, and reminds you before they need you. No more guesswork, no more crispy leaves." />
+  <link rel="canonical" href="https://example.com/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fern: keep every plant alive" />
+  <meta property="og:description" content="Identify your plants, get a care schedule for each one, and gentle reminders before they need you." />
+  <meta property="og:image" content="https://example.com/assets/img/og.png" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Fern: keep every plant alive" />
+  <meta name="twitter:description" content="Identify your plants, get a care schedule, and gentle reminders before they need you." />
+  <meta name="twitter:image" content="https://example.com/assets/img/og.png" />
+
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/img/site.webmanifest" />
+
+  <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <!-- ANNOUNCEMENT -->
+  <div data-announce class="relative z-40 border-b border-line bg-brand-soft">
+    <div class="mx-auto flex max-w-6xl items-center justify-center gap-3 px-5 py-2.5 text-center text-sm">
+      <span class="text-ink">Fern was an Editor's Choice on the App Store this month.</span>
+      <button data-announce-close type="button" aria-label="Dismiss announcement" class="absolute right-4 grid h-6 w-6 place-items-center rounded-full text-faint transition hover:bg-card hover:text-ink">
+        <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="grid h-8 w-8 place-items-center rounded-full bg-brand text-on-brand">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12 21c0-6 2-10 8-12-1 7-4 10-8 12zM12 21C8 19 5 16 4 9c6 2 8 6 8 12z"/></svg>
+        </span>
+        <span class="text-[17px]">Fern</span>
+      </a>
+
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#how" class="text-sm text-muted transition hover:text-ink">How it works</a>
+        <a href="#features" class="text-sm text-muted transition hover:text-ink">Features</a>
+        <a href="#reviews" class="text-sm text-muted transition hover:text-ink">Reviews</a>
+        <a href="#faq" class="text-sm text-muted transition hover:text-ink">FAQ</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#download" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get the app</a>
+        <button data-mobile-toggle type="button" aria-label="Open menu" aria-expanded="false" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink md:hidden">
+          <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div data-mobile-menu class="hidden border-t border-line bg-canvas md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3">
+        <a href="#how" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">How it works</a>
+        <a href="#features" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Features</a>
+        <a href="#reviews" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">Reviews</a>
+        <a href="#faq" class="rounded-lg px-3 py-2.5 text-sm text-muted transition hover:bg-panel hover:text-ink">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO · copy left, phone mockup right -->
+    <section class="relative overflow-hidden">
+      <div class="ambient pointer-events-none absolute inset-0 -z-10"></div>
+      <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 pt-14 pb-20 sm:px-6 md:pt-16 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
+        <div class="reveal max-w-xl">
+          <h1 class="text-4xl font-semibold leading-[1.04] tracking-tight sm:text-5xl lg:text-6xl">Keep every plant alive.</h1>
+          <p class="mt-5 max-w-md text-lg leading-relaxed text-muted">Fern identifies your plants, builds a care schedule for each one, and reminds you before they need you. No more guesswork, no more crispy leaves.</p>
+          <div class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#download" class="inline-flex items-center gap-2.5 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.984 4.46z"/></svg>
+              Download for iOS
+            </a>
+            <a href="#download" class="inline-flex items-center gap-2.5 rounded-full border border-line bg-card px-5 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">
+              <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M3.6 1.7c-.3.3-.5.8-.5 1.4v17.8c0 .6.2 1.1.5 1.4l.1.1 10-10v-.2l-10-10zM17 11.6l-3.3-3.3 2.6-1.5c1.6-.9 2.8-.2 2.8.9 0 .8-.5 1.4-1.3 1.9l-.8.5zm-3.3 1.1 3.3-3.3.8.5c.8.5 1.3 1.1 1.3 1.9 0 1.1-1.2 1.8-2.8.9l-2.6-1.5zM4.6 22.1l8.9-8.9 3.3 3.3-9.6 5.5c-1.1.6-2 .5-2.6.1z"/></svg>
+              Download for Android
+            </a>
+          </div>
+        </div>
+
+        <!-- Phone mockup: a real app screen, not a screenshot image -->
+        <div class="reveal reveal-d2 flex justify-center lg:justify-end">
+          <div class="w-[270px] rounded-[2.75rem] border-[10px] border-ink bg-ink shadow-lift">
+            <div class="relative overflow-hidden rounded-[2.1rem] bg-canvas">
+              <div class="absolute left-1/2 top-2 h-5 w-24 -translate-x-1/2 rounded-full bg-ink"></div>
+              <div class="px-5 pb-6 pt-9">
+                <div class="flex items-center justify-between">
+                  <p class="text-lg font-semibold tracking-tight">Today</p>
+                  <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+                </div>
+
+                <div class="mt-4 overflow-hidden rounded-2xl border border-line bg-card shadow-soft">
+                  <div class="h-24 w-full" style="background:radial-gradient(120% 120% at 30% 20%, #cfe9cf, #8fce9b 60%, #5aa873)"></div>
+                  <div class="flex items-center justify-between p-3">
+                    <div>
+                      <p class="text-sm font-semibold">Monstera</p>
+                      <p class="text-xs text-muted">Water today</p>
+                    </div>
+                    <button class="rounded-full bg-brand px-3 py-1.5 text-xs font-semibold text-on-brand">Done</button>
+                  </div>
+                </div>
+
+                <p class="mt-5 text-xs font-medium uppercase tracking-wider text-faint">Coming up</p>
+                <div class="mt-2 space-y-2">
+                  <div class="flex items-center gap-3 rounded-xl border border-line bg-card p-2.5">
+                    <span class="h-9 w-9 rounded-lg" style="background:radial-gradient(120% 120% at 30% 20%, #d8ead0, #9cc98a)"></span>
+                    <div class="min-w-0 flex-1"><p class="text-sm font-medium">Fiddle Leaf Fig</p><p class="text-xs text-muted">Water in 2 days</p></div>
+                  </div>
+                  <div class="flex items-center gap-3 rounded-xl border border-line bg-card p-2.5">
+                    <span class="h-9 w-9 rounded-lg" style="background:radial-gradient(120% 120% at 30% 20%, #e7e1cf, #cdbf8e)"></span>
+                    <div class="min-w-0 flex-1"><p class="text-sm font-medium">Snake Plant</p><p class="text-xs text-muted">Water in 9 days</p></div>
+                  </div>
+                </div>
+              </div>
+              <div class="flex items-center justify-around border-t border-line bg-panel py-3 text-faint">
+                <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand" fill="currentColor"><path d="M12 21c0-6 2-10 8-12-1 7-4 10-8 12zM12 21C8 19 5 16 4 9c6 2 8 6 8 12z"/></svg>
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+                <svg viewBox="0 0 24 24" class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RATING STRIP -->
+    <section class="border-y border-line bg-canvas py-8" aria-label="Ratings">
+      <div class="mx-auto flex max-w-5xl flex-col items-center justify-center gap-4 px-5 text-center sm:flex-row sm:gap-10 sm:px-6">
+        <div class="flex items-center gap-2">
+          <span class="flex text-brand" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg>
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg>
+          </span>
+          <span class="text-sm font-semibold">4.9 on the App Store</span>
+        </div>
+        <p class="text-sm text-muted">Loved by over 120,000 plant parents</p>
+        <p class="text-sm text-muted">Editor's Choice, 2026</p>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Plants do not die from neglect. They die from guesswork.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-muted">You water when you remember, which is too much for some and not enough for others. By the time a leaf goes yellow, the problem started two weeks ago.</p>
+        </div>
+        <div class="mt-12 grid gap-5 sm:grid-cols-3">
+          <div class="reveal rounded-3xl border border-line bg-card p-6 text-center shadow-soft">
+            <span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7S5 9 5 14a7 7 0 0 0 14 0c0-5-7-11.3-7-11.3z"/></svg></span>
+            <h3 class="mt-4 font-semibold">Overwatering kills more plants than drought</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Every plant wants something different, and "once a week" is a guess that drowns half of them.</p>
+          </div>
+          <div class="reveal reveal-d1 rounded-3xl border border-line bg-card p-6 text-center shadow-soft">
+            <span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
+            <h3 class="mt-4 font-semibold">You forget, then you overcorrect</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">A busy week goes by, you panic, and you flood the pot. The plant pays for the swing.</p>
+          </div>
+          <div class="reveal reveal-d2 rounded-3xl border border-line bg-card p-6 text-center shadow-soft">
+            <span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+            <h3 class="mt-4 font-semibold">By the time it shows, it is late</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-muted">Yellow leaves are a lagging signal. Without a plan you are always reacting, never ahead.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="border-y border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Three taps and you are set.</h2>
+          <p class="mt-4 text-lg text-muted">Add a plant once. Fern handles the rest, quietly, in the background.</p>
+        </div>
+        <ol class="mt-14 grid gap-8 md:grid-cols-3">
+          <li class="reveal text-center">
+            <span class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-brand text-on-brand shadow-soft"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+            <h3 class="mt-5 text-lg font-semibold">Snap a photo</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Fern identifies the plant in seconds, from over 17,000 species, and adds it to your shelf.</p>
+          </li>
+          <li class="reveal reveal-d1 text-center">
+            <span class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-brand text-on-brand shadow-soft"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span>
+            <h3 class="mt-5 text-lg font-semibold">Get a care plan</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">It builds a watering and light schedule tuned to that plant, your home, and the season.</p>
+          </li>
+          <li class="reveal reveal-d2 text-center">
+            <span class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-brand text-on-brand shadow-soft"><svg viewBox="0 0 24 24" class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+            <h3 class="mt-5 text-lg font-semibold">Get gentle reminders</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">A nudge on the day, not a pile of alerts. Mark it done with one tap and move on.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">A green thumb in your pocket.</h2>
+          <p class="mt-4 text-lg text-muted">Everything you would ask a plant expert, without owning a plant expert.</p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2">
+          <article class="reveal rounded-3xl border border-line bg-card p-7 shadow-soft">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <h3 class="mt-4 text-lg font-semibold">Identify any plant from a photo</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Point your camera at a plant and know exactly what it is, and exactly what it needs.</p>
+          </article>
+          <article class="reveal reveal-d1 rounded-3xl border border-line bg-card p-7 shadow-soft">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/><path d="M12 7v5l3 2"/></svg></span>
+            <h3 class="mt-4 text-lg font-semibold">A schedule that adapts to your home</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">Light, humidity, and the season all change how often a plant drinks. Fern adjusts so you do not have to.</p>
+          </article>
+          <article class="reveal reveal-d1 rounded-3xl border border-brand/20 bg-brand-soft p-7">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-card text-brand shadow-soft"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M12 3 4 6v6c0 4.5 3.2 7.8 8 9 4.8-1.2 8-4.5 8-9V6z"/></svg></span>
+            <h3 class="mt-4 text-lg font-semibold">Catch problems before they spread</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">A photo of a sad leaf gets you a likely cause and a fix, from pests to root rot, while there is still time.</p>
+          </article>
+          <article class="reveal reveal-d2 rounded-3xl border border-line bg-card p-7 shadow-soft">
+            <span class="grid h-12 w-12 place-items-center rounded-2xl bg-brand-soft text-brand"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0"/></svg></span>
+            <h3 class="mt-4 text-lg font-semibold">Reminders you will not resent</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">One quiet nudge on the day it matters. No nagging, no streaks to keep, no guilt.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="border-y border-line bg-panel/40 py-20 md:py-28">
+      <div class="mx-auto max-w-6xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">People keep their plants now.</h2>
+        </div>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <figure class="reveal rounded-3xl border border-line bg-card p-6 shadow-soft">
+            <span class="flex text-brand" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg></span>
+            <blockquote class="mt-3 text-sm leading-relaxed text-muted">"I have killed every plant I ever owned. My monstera is now eight months old and enormous. I do not know who I am anymore."</blockquote>
+            <figcaption class="mt-4 flex items-center gap-2.5">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">JM</span>
+              <span class="text-sm font-medium">Jess Moreau</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal reveal-d1 rounded-3xl border border-line bg-card p-6 shadow-soft">
+            <span class="flex text-brand" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg></span>
+            <blockquote class="mt-3 text-sm leading-relaxed text-muted">"The disease photo check caught spider mites a week before I would have noticed. Saved my whole fern shelf."</blockquote>
+            <figcaption class="mt-4 flex items-center gap-2.5">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">AO</span>
+              <span class="text-sm font-medium">Adaeze Okafor</span>
+            </figcaption>
+          </figure>
+          <figure class="reveal reveal-d2 rounded-3xl border border-line bg-card p-6 shadow-soft">
+            <span class="flex text-brand" aria-label="5 out of 5 stars"><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg><svg viewBox="0 0 24 24" class="h-4 w-4" fill="currentColor"><path d="m12 2 3 6.3 6.9 1-5 4.8 1.2 6.9L12 17.8 5.9 21l1.2-6.9-5-4.8 6.9-1z"/></svg></span>
+            <blockquote class="mt-3 text-sm leading-relaxed text-muted">"Finally a plant app that does not buzz me ten times a day. One reminder, on the right day. That is it."</blockquote>
+            <figcaption class="mt-4 flex items-center gap-2.5">
+              <span class="grid h-8 w-8 place-items-center rounded-full bg-brand-soft text-xs font-semibold text-brand">TB</span>
+              <span class="text-sm font-medium">Tomas Brandt</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING (2-tier consumer) -->
+    <section class="py-20 md:py-28">
+      <div class="mx-auto max-w-4xl px-5 sm:px-6">
+        <div class="reveal mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight sm:text-4xl">Free to start. Plus when you are hooked.</h2>
+        </div>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+          <div class="reveal rounded-3xl border border-line bg-card p-8 shadow-soft">
+            <h3 class="font-semibold">Free</h3>
+            <p class="mt-1 text-sm text-muted">For your first few plants.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">$0</span></p>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Up to 5 plants</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Plant ID and care schedules</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Watering reminders</span></li>
+            </ul>
+            <a href="#download" class="mt-7 inline-flex w-full items-center justify-center rounded-full border border-line bg-card px-5 py-2.5 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">Get the app</a>
+          </div>
+          <div class="reveal reveal-d1 relative rounded-3xl border-2 border-brand bg-card p-8 shadow-lift">
+            <span class="absolute -top-3 left-8 rounded-full bg-brand px-3 py-1 text-xs font-semibold text-on-brand">Most popular</span>
+            <h3 class="font-semibold">Fern Plus</h3>
+            <p class="mt-1 text-sm text-muted">For a home full of green.</p>
+            <p class="mt-5"><span class="text-4xl font-semibold tracking-tight">$3.99</span><span class="text-muted"> / month</span></p>
+            <ul class="mt-6 space-y-3 text-sm">
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Unlimited plants</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Disease and pest diagnosis</span></li>
+              <li class="flex gap-2.5"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-brand" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span class="text-muted">Light meter and repot timing</span></li>
+            </ul>
+            <a href="#download" class="mt-7 inline-flex w-full items-center justify-center rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Start 7-day free trial</a>
+          </div>
+        </div>
+        <p class="reveal mt-6 text-center text-sm text-muted">Cancel anytime in two taps. No ads, ever.</p>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD BAND -->
+    <section id="download" class="px-5 pb-20 sm:px-6 md:pb-28">
+      <div class="reveal relative mx-auto max-w-5xl overflow-hidden rounded-[2rem] border border-line bg-card p-10 text-center shadow-lift sm:p-14">
+        <div class="ambient pointer-events-none absolute inset-0 -z-10"></div>
+        <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">Your plants are waiting.</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-muted">Download Fern free and add your first plant in under a minute.</p>
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a href="#" class="inline-flex items-center gap-2.5 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.984 4.46z"/></svg>
+            Download for iOS
+          </a>
+          <a href="#" class="inline-flex items-center gap-2.5 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">
+            <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor"><path d="M3.6 1.7c-.3.3-.5.8-.5 1.4v17.8c0 .6.2 1.1.5 1.4l.1.1 10-10v-.2l-10-10zM17 11.6l-3.3-3.3 2.6-1.5c1.6-.9 2.8-.2 2.8.9 0 .8-.5 1.4-1.3 1.9l-.8.5zm-3.3 1.1 3.3-3.3.8.5c.8.5 1.3 1.1 1.3 1.9 0 1.1-1.2 1.8-2.8.9l-2.6-1.5zM4.6 22.1l8.9-8.9 3.3 3.3-9.6 5.5c-1.1.6-2 .5-2.6.1z"/></svg>
+            Download for Android
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="px-5 pb-20 sm:px-6 md:pb-28">
+      <div class="mx-auto max-w-3xl">
+        <h2 class="reveal text-center text-3xl font-semibold tracking-tight sm:text-4xl">Questions, answered.</h2>
+        <div class="reveal mt-10 divide-y divide-line border-y border-line">
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Is Fern really free?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. You can track up to five plants, with identification, schedules, and reminders, free forever. Plus unlocks unlimited plants and the diagnosis tools.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Will it work for my weird plant?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Probably. Fern recognizes over 17,000 species, from common pothos to the rare aroid you overpaid for. If it is unsure, you can set the care details yourself.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Will it spam me with notifications?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">No. One reminder on the day a plant needs care, and that is it. You can batch them to a single daily time if you prefer.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Is it on Android?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes, iOS and Android, with the same features on both. Your shelf syncs if you switch.</p>
+          </details>
+          <details class="group py-5" name="faq">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-medium">Do my photos stay private?
+              <svg viewBox="0 0 24 24" class="h-5 w-5 shrink-0 text-faint transition group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+            <p class="mt-3 leading-relaxed text-muted">Yes. Photos are used to identify and diagnose, never sold or shared. You can delete them any time.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto max-w-6xl px-5 py-14 sm:px-6">
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="lg:col-span-1">
+          <a href="#" class="flex items-center gap-2.5 font-semibold tracking-tight">
+            <span class="grid h-8 w-8 place-items-center rounded-full bg-brand text-on-brand"><svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true"><path d="M12 21c0-6 2-10 8-12-1 7-4 10-8 12zM12 21C8 19 5 16 4 9c6 2 8 6 8 12z"/></svg></span>
+            <span class="text-[17px]">Fern</span>
+          </a>
+          <p class="mt-4 max-w-xs text-sm leading-relaxed text-muted">The plant care app that keeps your plants alive, quietly.</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">App</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#features" class="transition hover:text-ink">Features</a></li>
+            <li><a href="#download" class="transition hover:text-ink">Download</a></li>
+            <li><a href="#reviews" class="transition hover:text-ink">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Company</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">About</a></li>
+            <li><a href="#" class="transition hover:text-ink">Blog</a></li>
+            <li><a href="#" class="transition hover:text-ink">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-sm font-semibold">Legal</p>
+          <ul class="mt-4 space-y-3 text-sm text-muted">
+            <li><a href="#" class="transition hover:text-ink">Privacy</a></li>
+            <li><a href="#" class="transition hover:text-ink">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 flex flex-col items-center justify-between gap-3 border-t border-line pt-6 sm:flex-row">
+        <p class="text-sm text-faint">&copy; 2026 Fern. All rights reserved.</p>
+        <p class="text-sm text-faint">Built with <a href="#" class="font-medium text-muted transition hover:text-ink">Pagewright</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
