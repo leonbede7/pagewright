@@ -21,15 +21,26 @@
   <text x="80" y="414" font-family="'Geist','Segoe UI',Arial,sans-serif" font-size="60" font-weight="700" fill="#0b0c12" letter-spacing="-1.8">written.</text>
 
   <!-- Subhead -->
-  <text x="82" y="468" font-family="'Geist','Segoe UI',Arial,sans-serif" font-size="25" font-weight="400" fill="#545a6a">Two premium templates. Plain HTML and Tailwind, no build step.</text>
+  <text x="82" y="468" font-family="'Geist','Segoe UI',Arial,sans-serif" font-size="25" font-weight="400" fill="#545a6a">Three premium templates. HTML + Tailwind, no build step.</text>
 
   <!-- Pill -->
   <g transform="translate(82,500)">
-    <rect width="232" height="46" rx="23" fill="#0b0c12"/>
-    <text x="26" y="30" font-family="'Geist','Segoe UI',Arial,sans-serif" font-size="19" font-weight="600" fill="#ffffff">Aurora + Ledger</text>
+    <rect width="318" height="46" rx="23" fill="#0b0c12"/>
+    <text x="26" y="30" font-family="'Geist','Segoe UI',Arial,sans-serif" font-size="19" font-weight="600" fill="#ffffff">Aurora &#183; Ledger &#183; Bloom</text>
   </g>
 
-  <!-- Two template hint cards (the only color on the page) -->
+  <!-- Template hint cards (the only color on the page) -->
+  <g transform="translate(686,92)" filter="url(#shadow)">
+    <rect width="330" height="232" rx="18" fill="#ffffff" stroke="#e6e7ee"/>
+    <rect width="330" height="38" rx="18" fill="#f4f5f8"/>
+    <rect y="24" width="330" height="14" fill="#f4f5f8"/>
+    <circle cx="24" cy="19" r="4" fill="#cfd3dc"/><circle cx="40" cy="19" r="4" fill="#d8dbe3"/><circle cx="56" cy="19" r="4" fill="#e1e4ea"/>
+    <rect x="24" y="62" width="100" height="20" rx="6" fill="#e11d6b"/>
+    <rect x="24" y="104" width="282" height="12" rx="6" fill="#e9ebf1"/>
+    <rect x="24" y="128" width="210" height="12" rx="6" fill="#eef0f5"/>
+    <rect x="24" y="166" width="120" height="40" rx="20" fill="#fde7f0"/>
+  </g>
+
   <g transform="translate(742,150)" filter="url(#shadow)">
     <rect width="360" height="250" rx="18" fill="#ffffff" stroke="#e6e7ee"/>
     <rect width="360" height="40" rx="18" fill="#f4f5f8"/>
