@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Landing page copywriting for developers who hate writing | Pagewright</title>
+  <meta name="description" content="A simple, repeatable framework for writing landing page copy when you can build the product but freeze at the words. Outcome headlines, the so-what drill, and fill-in-the-blank examples." />
+  <link rel="canonical" href="https://leonbede7.github.io/pagewright/landing-page-copywriting/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Landing page copywriting for developers who hate writing" />
+  <meta property="og:description" content="A simple framework for writing landing page copy when you can build but freeze at the words. With fill-in-the-blank examples." />
+  <meta property="og:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+  <meta property="og:url" content="https://leonbede7.github.io/pagewright/landing-page-copywriting/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Landing page copywriting for developers who hate writing" />
+  <meta name="twitter:description" content="A simple framework for writing landing page copy when you can build but freeze at the words." />
+  <meta name="twitter:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Landing page copywriting for developers who hate writing",
+    "description": "A simple, repeatable framework for writing landing page copy when you can build the product but freeze at the words.",
+    "image": "https://leonbede7.github.io/pagewright/assets/img/og.png",
+    "author": { "@type": "Organization", "name": "Pagewright" },
+    "publisher": { "@type": "Organization", "name": "Pagewright" },
+    "mainEntityOfPage": "https://leonbede7.github.io/pagewright/landing-page-copywriting/"
+  }
+  </script>
+
+  <style>
+    .prose { max-width: 68ch; color: var(--muted); font-size: 1.0625rem; line-height: 1.75; }
+    .prose h2 { color: var(--ink); font-size: 1.45rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; margin-top: 2.2em; margin-bottom: 0.4em; }
+    .prose p { margin-bottom: 1.15em; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .prose .label { color: var(--ink); }
+    .prose .swap { margin: 1.2em 0; border-left: 3px solid var(--line); padding-left: 1em; }
+    .prose .swap .bad { color: var(--faint); }
+    .prose .swap .good { color: var(--ink); font-weight: 600; }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/>
+            <rect x="8" y="3" width="13" height="15" rx="2.5"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get Pagewright</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article class="mx-auto max-w-3xl px-5 py-14 sm:px-6 md:py-20">
+      <header>
+        <p class="text-sm font-medium text-muted"><a href="../" class="transition hover:text-ink">Pagewright</a> / Guide</p>
+        <h1 class="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">Landing page copywriting for developers who hate writing.</h1>
+        <p class="mt-4 text-lg text-muted">You can ship the product. Then you open the landing page, stare at the blank hero, and freeze. Copy is not a talent you are missing. It is a small set of moves you can run every time. Here is the whole framework.</p>
+        <p class="mt-4 text-sm text-faint">About a 7 minute read.</p>
+      </header>
+
+      <div class="prose mt-10">
+        <p>The good news first: landing page copy is not creative writing. You are not trying to sound clever. You are trying to be clear about one thing, in the reader's own words, in the right order. That is a repeatable process, and a developer who follows it will beat a "real writer" who is just being eloquent.</p>
+
+        <h2>The one drill that fixes most copy: "so what?"</h2>
+        <p>Almost every weak line on a landing page is a feature stated as a fact. The fix is to ask "so what?" until you reach an outcome the reader actually feels. Keep going until the next "so what?" would sound silly.</p>
+        <div class="swap">
+          <p class="bad">Real-time sync.</p>
+          <p class="bad">So what? Everyone sees changes instantly.</p>
+          <p class="bad">So what? Your team is never working off old information.</p>
+          <p class="good">So what? You stop having the status meeting.</p>
+        </div>
+        <p>That last line is the copy. It is concrete, it is a result, and it is something the reader wants. The feature ("real-time sync") still belongs on the page, lower down, as the reason the outcome is true. Lead with the outcome, support it with the feature.</p>
+
+        <h2>The hero: one outcome, one mechanism, one ask</h2>
+        <p>The top of the page has exactly one job: make a stranger understand what they get and why it is believable, in about five seconds. Use three lines and nothing more.</p>
+        <p><strong>Headline (the outcome):</strong> the result the reader walks away with, in their words. Not "the next-generation analytics platform." Try the fill-in-the-blank: <em>"[Audience] [achieves outcome] without [the pain they expect]."</em></p>
+        <div class="swap">
+          <p class="bad">Powerful analytics for modern teams.</p>
+          <p class="good">Know which features actually get used, without a data team.</p>
+        </div>
+        <p><strong>Subhead (the mechanism):</strong> one sentence on how it works, so the headline is believable. <em>"[Product] does [the specific thing] so you can [the outcome]."</em></p>
+        <p><strong>One call to action:</strong> a single primary button. A second option is fine only if it is visibly quieter, a text link rather than a competing button. Two equal buttons split attention and lower both.</p>
+
+        <h2>Name the problem before you pitch (PAS)</h2>
+        <p>People buy a solution only after they feel the problem. The simplest structure for this is PAS: Problem, Agitate, Solution. State the situation the reader is in, make the cost of it concrete, then present your product as the way out.</p>
+        <p>You do not need to be dramatic. One honest paragraph that says "right now you are doing X, which costs you Y" does the work. The mistake is skipping straight to features while the reader still feels fine about their current setup. If they do not feel the problem, your solution is just noise.</p>
+
+        <h2>Write every feature as an outcome</h2>
+        <p>List your features in one column. In the next column, run the "so what?" drill on each until it becomes a benefit. Put the benefit on the page as the heading and keep the feature as the supporting line.</p>
+        <div class="swap">
+          <p class="bad">Feature: role-based permissions.</p>
+          <p class="good">Outcome: give clients access without showing them everything.</p>
+        </div>
+        <div class="swap">
+          <p class="bad">Feature: exports to CSV and webhook.</p>
+          <p class="good">Outcome: your data is yours, drop it into whatever you already use.</p>
+        </div>
+        <p>This single exercise rewrites most of a features section in twenty minutes, and it is the difference between a spec sheet and a page that sells.</p>
+
+        <h2>Proof, in the buyer's words</h2>
+        <p>One specific, believable quote beats ten vague ones. "Loved by thousands" proves nothing. A line with a real name, role, and a concrete result ("cut our onboarding from a week to a day") proves a lot. If you have no testimonials yet, do not invent them. Use a clear product screenshot or a real number you can stand behind, and leave the rest out. An honest gap beats an obvious fake.</p>
+
+        <h2>The FAQ is where you handle objections</h2>
+        <p>An FAQ is not for trivia. It is the place to answer the six things quietly stopping someone from buying: price worries, "will this work for my case", switching cost, trust, refunds, and "do I need to be technical". Write each answer in the reader's words, plainly. If the same question keeps coming up over email, it belongs on the page.</p>
+
+        <h2>One ask, repeated</h2>
+        <p>End the page by restating the transformation in one sentence and asking once, with the same words you used in the hero. Do not introduce a new idea at the finish line. The reader has decided by now; your job is to make the next step obvious, not to add more to think about.</p>
+
+        <h2>A copy pass you can run in an hour</h2>
+        <p>Put it together as a checklist. Write your headline as an outcome. Add a one-line mechanism. Run "so what?" on every feature. Add a short problem section before the solution. Find one real piece of proof. Answer your six real objections. End with one ask. That is a full landing page of copy, and none of it required talent, only the process.</p>
+
+        <p>If you want to see the structure these words sit inside, read <a href="../guide/">the anatomy of a landing page that converts</a>, and the <a href="../landing-page-mistakes/">seven mistakes that quietly kill conversions</a>.</p>
+      </div>
+
+      <div class="mt-14 rounded-2xl border border-line bg-card p-8 shadow-soft">
+        <h2 class="text-2xl font-semibold tracking-tight">Skip the blank page entirely.</h2>
+        <p class="mt-3 text-muted">Pagewright is three landing page templates with this framework already applied: the conversion structure and the persuasion copy written for you, and every section annotated with why it is worded that way. Plain HTML and Tailwind, no build step. Swap in your brand with the included copy worksheet and ship in an hour.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="../#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Get Pagewright
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="../#templates" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">See the templates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 sm:flex-row sm:px-6">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/><rect x="8" y="3" width="13" height="15" rx="2.5"/></svg></span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <p class="text-sm text-faint">Conversion-engineered landing pages, with the copy already written.</p>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="../#templates" class="transition hover:text-ink">Templates</a>
+        <a href="../#pricing" class="transition hover:text-ink">Pricing</a>
+        <a href="../guide/" class="transition hover:text-ink">Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js" defer></script>
+</body>
+</html>
