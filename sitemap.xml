@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://leonbede7.github.io/pagewright/saas-landing-page/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://leonbede7.github.io/pagewright/checklist/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
