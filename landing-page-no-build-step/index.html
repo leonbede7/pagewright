@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Ship a SaaS landing page in an hour, no build step (HTML + Tailwind) | Pagewright</title>
+  <meta name="description" content="Build and deploy a SaaS landing page in about an hour with plain HTML and precompiled Tailwind. No React, no Node, no build step. A framework-free, step-by-step guide." />
+  <link rel="canonical" href="https://leonbede7.github.io/pagewright/landing-page-no-build-step/" />
+
+  <meta name="theme-color" content="#fbfbfd" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0a0b10" media="(prefers-color-scheme: dark)" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Ship a SaaS landing page in an hour, no build step (HTML + Tailwind)" />
+  <meta property="og:description" content="Build and deploy a landing page in about an hour with plain HTML and precompiled Tailwind. No React, no Node, no build step." />
+  <meta property="og:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+  <meta property="og:url" content="https://leonbede7.github.io/pagewright/landing-page-no-build-step/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ship a SaaS landing page in an hour, no build step" />
+  <meta name="twitter:description" content="Plain HTML and precompiled Tailwind. No React, no Node, no build step." />
+  <meta name="twitter:image" content="https://leonbede7.github.io/pagewright/assets/img/og.png" />
+
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png" />
+
+  <link rel="preload" href="../assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Ship a SaaS landing page in an hour, no build step (HTML + Tailwind)",
+    "description": "Build and deploy a SaaS landing page in about an hour with plain HTML and precompiled Tailwind. No React, no Node, no build step.",
+    "image": "https://leonbede7.github.io/pagewright/assets/img/og.png",
+    "author": { "@type": "Organization", "name": "Pagewright" },
+    "publisher": { "@type": "Organization", "name": "Pagewright" },
+    "mainEntityOfPage": "https://leonbede7.github.io/pagewright/landing-page-no-build-step/"
+  }
+  </script>
+
+  <style>
+    .prose { max-width: 68ch; color: var(--muted); font-size: 1.0625rem; line-height: 1.75; }
+    .prose h2 { color: var(--ink); font-size: 1.45rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; margin-top: 2.2em; margin-bottom: 0.4em; }
+    .prose p { margin-bottom: 1.15em; }
+    .prose strong { color: var(--ink); font-weight: 600; }
+    .prose a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .prose ol { margin: 1.15em 0; padding-left: 1.3em; }
+    .prose ol li { margin-bottom: 0.6em; }
+    .prose code { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 0.92em; background: var(--panel); padding: 0.1em 0.35em; border-radius: 5px; }
+  </style>
+
+  <script>
+    (function () {
+      try {
+        document.documentElement.classList.add('js');
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body class="font-sans antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-on-brand">Skip to content</a>
+
+  <header class="sticky top-0 z-30 border-b border-line/70 bg-canvas/80 backdrop-blur-md">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6" aria-label="Primary">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink">
+          <svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true">
+            <rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/>
+            <rect x="8" y="3" width="13" height="15" rx="2.5"/>
+          </svg>
+        </span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <div class="flex items-center gap-2">
+        <button data-theme-toggle type="button" aria-label="Toggle dark mode" class="grid h-9 w-9 place-items-center rounded-full border border-line text-muted transition hover:bg-panel hover:text-ink">
+          <svg data-icon-sun viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg data-icon-moon viewBox="0 0 24 24" class="hidden h-[18px] w-[18px]" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="../#pricing" class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">Get Pagewright</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <article class="mx-auto max-w-3xl px-5 py-14 sm:px-6 md:py-20">
+      <header>
+        <p class="text-sm font-medium text-muted"><a href="../" class="transition hover:text-ink">Pagewright</a> / Guide</p>
+        <h1 class="mt-3 text-4xl font-semibold leading-[1.08] tracking-tight sm:text-5xl">Ship a SaaS landing page in an hour, no build step.</h1>
+        <p class="mt-4 text-lg text-muted">You do not need React, Node, or a build pipeline to put a real landing page online. Plain HTML and precompiled Tailwind will do it, and they will do it faster. Here is the whole framework-free workflow, start to live URL.</p>
+        <p class="mt-4 text-sm text-faint">About a 6 minute read.</p>
+      </header>
+
+      <div class="prose mt-10">
+        <p>A landing page is a static document. It shows the same thing to everyone, it has no logged-in state, and it does not need a server. Treating it like an app, with a framework and a build step, adds hours of setup and a pile of moving parts for zero benefit. The fastest path is the boring one: one HTML file, real CSS, a little vanilla JavaScript, dropped onto a free host.</p>
+
+        <h2>Why "no build step" is the right call for a landing page</h2>
+        <p>A build step earns its keep when you have components, state, and a large app. A marketing page has none of that. Going framework-free buys you real advantages: there is nothing to install, anyone (including an AI assistant) can edit a plain file, it loads instantly because it is static, and it will still open and deploy in five years with no dependency rot. The only thing you give up is tooling you did not need.</p>
+
+        <h2>Use precompiled Tailwind, not the CDN</h2>
+        <p>You can still use Tailwind without a build step, but do it correctly. The Tailwind CDN script is explicitly not for production: it generates styles at runtime, which causes a flash of unstyled content and adds a dependency that can break. Instead ship a <strong>precompiled</strong> <code>styles.css</code> (built once, then committed as a plain file). Your page looks finished on the first paint, with no build tool on your end. You get Tailwind's ergonomics and a static file's reliability.</p>
+
+        <h2>The hour, step by step</h2>
+        <ol>
+          <li><strong>Start from a structured single file.</strong> Do not start from a blank page; start from a page that already has the right section order (hero, problem, how-it-works, features, proof, pricing, FAQ, final CTA). Structure is where most of the hour disappears if you wing it.</li>
+          <li><strong>Swap the brand and the words.</strong> Replace the product name, the headline, and the body copy. Write headlines as outcomes, not features. (See <a href="../landing-page-copywriting/">the copywriting framework</a> if the words are the part that stalls you.)</li>
+          <li><strong>Change the accent in one place.</strong> A good template keeps its palette in a handful of CSS variables. Edit those to rebrand the whole page in seconds instead of hunting through markup.</li>
+          <li><strong>Check the basics.</strong> One <code>h1</code>, logical heading order, alt text on images, visible focus states, and a <code>prefers-reduced-motion</code> fallback. Static pages are fast by default, so performance mostly takes care of itself.</li>
+          <li><strong>Deploy free.</strong> Drag the folder to a free static host and you have a live URL.</li>
+        </ol>
+
+        <h2>Deploy free in minutes</h2>
+        <p>Any of these host static files for free and give you HTTPS and a real URL:</p>
+        <ol>
+          <li><strong>Cloudflare Pages</strong> — connect the repo or drag the folder; global CDN included.</li>
+          <li><strong>GitHub Pages</strong> — push the files to a repo, enable Pages, done. (This very site runs on it.)</li>
+          <li><strong>Netlify</strong> — drag-and-drop the folder onto the dashboard for an instant deploy.</li>
+        </ol>
+        <p>No server, no pipeline, no monthly bill. When you want a custom domain later, every one of these supports it for free.</p>
+
+        <h2>What you get for free by staying static</h2>
+        <p>Because there is no runtime framework, the page is fast, it is cheap (free) to host, it cannot be broken by a dependency update, and it is trivial to hand to someone else or to an AI assistant for edits. For a page whose only job is to convert a visitor, that reliability is worth more than any build-time cleverness.</p>
+
+        <p>That is the entire method: start from real structure, swap in your words, change one accent, ship to a free host. The slow part was never the code. It was the blank page and the framework setup, and you can skip both.</p>
+
+        <p>More on getting it right: <a href="../guide/">the anatomy of a landing page that converts</a>, the <a href="../landing-page-mistakes/">seven mistakes that quietly kill conversions</a>, and <a href="../landing-page-copywriting/">landing page copywriting for developers who hate writing</a>.</p>
+      </div>
+
+      <div class="mt-14 rounded-2xl border border-line bg-card p-8 shadow-soft">
+        <h2 class="text-2xl font-semibold tracking-tight">Start from structure, not a blank file.</h2>
+        <p class="mt-3 text-muted">Pagewright is three landing page templates built exactly this way: plain HTML, precompiled Tailwind, no build step, with the conversion structure and copy already written and annotated. Open it, swap your brand, change eight variables, and deploy free, in about an hour.</p>
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+          <a href="../#pricing" class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-on-brand shadow-soft transition hover:opacity-90 active:scale-[0.98]">
+            Get Pagewright
+            <svg viewBox="0 0 24 24" class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="../#templates" class="inline-flex items-center gap-2 rounded-full border border-line bg-card px-6 py-3 text-sm font-semibold text-ink transition hover:bg-panel active:scale-[0.98]">See the templates</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="border-t border-line bg-canvas">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-10 sm:flex-row sm:px-6">
+      <a href="../" class="flex items-center gap-2.5 font-semibold tracking-tight">
+        <span class="text-ink"><svg viewBox="0 0 24 24" class="h-6 w-6" fill="currentColor" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2.5" opacity="0.32"/><rect x="8" y="3" width="13" height="15" rx="2.5"/></svg></span>
+        <span class="text-[17px]">Pagewright</span>
+      </a>
+      <p class="text-sm text-faint">Conversion-engineered landing pages, with the copy already written.</p>
+      <div class="flex items-center gap-5 text-sm text-muted">
+        <a href="../#templates" class="transition hover:text-ink">Templates</a>
+        <a href="../#pricing" class="transition hover:text-ink">Pricing</a>
+        <a href="../guide/" class="transition hover:text-ink">Guide</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.js" defer></script>
+</body>
+</html>
